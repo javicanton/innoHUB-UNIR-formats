@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Repositorio web operativo del proyecto innoHUB UNIR: biblia de formatos audiovisuales para innovación en divulgación científica.">
+  <title>innoHUB UNIR | Biblia de Formatos Audiovisuales</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230b7a77'/><text x='16' y='22' font-size='16' text-anchor='middle' fill='%23fff' font-family='system-ui'>i</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+
+  <header class="site-header">
+    <a class="brand" href="#inicio">
+      <span class="brand-dot"></span>
+      <span>innoHUB UNIR</span>
+    </a>
+    <nav class="site-nav" aria-label="Navegacion principal">
+      <a href="#marco">Marco</a>
+      <a href="#catalogo">Catalogo</a>
+      <a href="#matriz">Matriz</a>
+      <a href="#gobernanza">Gobernanza</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="section-shell hero" id="inicio">
+      <div class="hero-main">
+        <p class="eyebrow">Repositorio de innovacion en divulgacion cientifica</p>
+        <h1 id="projectTitle"></h1>
+        <p id="projectSubtitle" class="hero-subtitle"></p>
+        <p id="projectSummary" class="hero-summary"></p>
+
+        <div class="hero-actions">
+          <a href="#catalogo" class="btn btn-primary">Explorar formatos</a>
+          <a href="#plantilla" class="btn btn-ghost">Ver plantilla operativa</a>
+        </div>
+      </div>
+
+      <aside class="hero-aside" aria-label="Indicadores del repositorio">
+        <h2>Snapshot operativo</h2>
+        <div class="kpi-grid">
+          <article class="kpi-card">
+            <p class="kpi-value" id="kpiFormats">0</p>
+            <p class="kpi-label">formatos mapeados</p>
+          </article>
+          <article class="kpi-card">
+            <p class="kpi-value" id="kpiCategories">0</p>
+            <p class="kpi-label">familias de formato</p>
+          </article>
+          <article class="kpi-card">
+            <p class="kpi-value" id="kpiHighInteractivity">0</p>
+            <p class="kpi-label">alto nivel interactivo</p>
+          </article>
+          <article class="kpi-card">
+            <p class="kpi-value" id="kpiFast">0</p>
+            <p class="kpi-label">prototipos rapidos</p>
+          </article>
+        </div>
+        <p class="meta-note" id="projectStatus"></p>
+      </aside>
+    </section>
+
+    <section class="section-shell section-block" id="marco">
+      <header class="section-head">
+        <p class="eyebrow">Metodo de trabajo</p>
+        <h2>Marco de decision para seleccionar formatos</h2>
+      </header>
+
+      <div class="framework-grid">
+        <article class="panel">
+          <h3>Pilares de diseno</h3>
+          <ul id="pillarsList" class="clean-list"></ul>
+        </article>
+
+        <article class="panel">
+          <h3>Taxonomia minima</h3>
+          <ul id="taxonomyList" class="clean-list"></ul>
+        </article>
+      </div>
+
+      <article class="panel decision-panel">
+        <h3>Mapa rapido objetivo -> formato</h3>
+        <div id="decisionGrid" class="decision-grid"></div>
+      </article>
+    </section>
+
+    <section class="section-shell section-block" id="catalogo">
+      <header class="section-head">
+        <p class="eyebrow">Repositorio vivo</p>
+        <h2>Catalogo de formatos audiovisuales</h2>
+      </header>
+
+      <div class="catalog-controls panel">
+        <label class="field">
+          <span>Buscar</span>
+          <input id="searchInput" type="search" placeholder="Ej. VR, TikTok, webdoc, IA avatar">
+        </label>
+
+        <label class="field">
+          <span>Categoria</span>
+          <select id="categoryFilter">
+            <option value="all">Todas</option>
+          </select>
+        </label>
+
+        <label class="field">
+          <span>Interactividad</span>
+          <select id="interactivityFilter">
+            <option value="all">Todas</option>
+            <option value="low">Baja</option>
+            <option value="mid">Media</option>
+            <option value="high">Alta</option>
+          </select>
+        </label>
+
+        <label class="field">
+          <span>Escalabilidad</span>
+          <select id="scalabilityFilter">
+            <option value="all">Todas</option>
+            <option value="low">Baja</option>
+            <option value="mid">Media</option>
+            <option value="high">Alta</option>
+          </select>
+        </label>
+
+        <button class="btn btn-ghost" id="resetFilters" type="button">Limpiar filtros</button>
+      </div>
+
+      <p id="resultsInfo" class="results-info"></p>
+
+      <div class="catalog-layout">
+        <div id="cardsGrid" class="cards-grid" aria-live="polite"></div>
+        <aside id="detailPanel" class="detail-panel panel"></aside>
+      </div>
+    </section>
+
+    <section class="section-shell section-block" id="matriz">
+      <header class="section-head">
+        <p class="eyebrow">Comparativa de planificacion</p>
+        <h2>Matriz de coste, tiempo, interactividad y escalabilidad</h2>
+      </header>
+
+      <div class="matrix-layout">
+        <article class="panel" id="matrixTableWrap"></article>
+        <article class="panel" id="chartWrap"></article>
+      </div>
+    </section>
+
+    <section class="section-shell section-block" id="gobernanza">
+      <header class="section-head">
+        <p class="eyebrow">Etica y cumplimiento</p>
+        <h2>Gobernanza transversal del repositorio</h2>
+      </header>
+      <article class="panel">
+        <ul id="governanceList" class="clean-list"></ul>
+      </article>
+    </section>
+
+    <section class="section-shell section-block" id="plantilla">
+      <header class="section-head">
+        <p class="eyebrow">Estandar de ficha</p>
+        <h2>Campos minimos para nuevas incorporaciones</h2>
+      </header>
+      <article class="panel">
+        <ul id="templateList" class="clean-list two-columns"></ul>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>innoHUB UNIR | Biblia de formatos audiovisuales para innovacion en divulgacion cientifica.</p>
+    <p>Version inicial web construida a partir de la documentacion de proyecto y la investigacion en PDF.</p>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

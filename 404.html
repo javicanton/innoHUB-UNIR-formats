@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Página no encontrada | innoHUB UNIR Biblia de Formatos</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .error-hero { text-align: center; padding: 4rem 1rem; }
+    .error-hero h1 { font-size: 1.5rem; margin-bottom: 0.5rem; }
+    .error-hero p { color: var(--muted); margin-bottom: 1.5rem; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html">
+      <span class="brand-dot"></span>
+      <span>innoHUB UNIR</span>
+    </a>
+  </header>
+  <main class="section-shell">
+    <section class="error-hero">
+      <h1>Página no encontrada</h1>
+      <p>La ruta que buscas no existe en este sitio.</p>
+      <a href="/" class="btn btn-primary" id="homeLink">Ir al inicio</a>
+    </section>
+  </main>
+  <script>
+    (function () {
+      var origin = window.location.origin;
+      var pathname = window.location.pathname;
+      var parts = pathname.split('/').filter(Boolean);
+      var root = parts.length ? origin + '/' + parts[0] : origin;
+      document.getElementById('homeLink').href = root + '/';
+    })();
+  </script>
+</body>
+</html>
