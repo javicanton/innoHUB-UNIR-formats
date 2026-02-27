@@ -11,7 +11,7 @@
 
   const categoryLabels = {
     social: "Social",
-    hibrido: "Hibrido",
+    hibrido: "Híbrido",
     transmedia: "Transmedia",
     interactivo: "Interactivo",
     inmersivo: "Inmersivo",
@@ -109,12 +109,15 @@
     if (state.scalability !== "all" && levelBand(item.scalabilityLevel) !== state.scalability) return false;
 
     if (!state.query) return true;
+    const examplesText = item.examples
+      .map((ex) => (typeof ex === "string" ? ex : ex.name))
+      .join(" ");
     const haystack = [
       item.name,
       item.type,
       item.objective,
       item.definition,
-      item.examples.join(" "),
+      examplesText,
       item.metrics.join(" ")
     ]
       .join(" ")
@@ -140,7 +143,7 @@
 
   function renderCards(filtered) {
     if (!filtered.length) {
-      elements.cardsGrid.innerHTML = `<article class="empty-state">No hay formatos con esos filtros. Ajusta busqueda o limpia filtros.</article>`;
+      elements.cardsGrid.innerHTML = `<article class="empty-state">No hay formatos con esos filtros. Ajusta búsqueda o limpia filtros.</article>`;
       elements.detailPanel.innerHTML = `<p class="empty-state">Selecciona un formato para ver su ficha.</p>`;
       elements.resultsInfo.textContent = "0 resultados.";
       return;
@@ -181,6 +184,19 @@
     return `<ul>${items.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>`;
   }
 
+  function examplesMarkup(examples) {
+    return `<ul>${examples
+      .map((ex) => {
+        const name = typeof ex === "string" ? ex : ex.name;
+        const url = typeof ex === "object" && ex.url;
+        if (url) {
+          return `<li><a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(name)}</a></li>`;
+        }
+        return `<li>${escapeHtml(name)}</li>`;
+      })
+      .join("")}</ul>`;
+  }
+
   function renderDetail(filtered) {
     const selected = filtered.find((item) => item.id === state.selectedId);
     if (!selected) return;
@@ -199,13 +215,13 @@
           <h4>Contexto de uso</h4>
           <p><strong>Publico:</strong> ${escapeHtml(selected.audience)}</p>
           <p><strong>Objetivo:</strong> ${escapeHtml(selected.objective)}</p>
-          <p><strong>Produccion:</strong> ${escapeHtml(selected.production)}</p>
+          <p><strong>Producción:</strong> ${escapeHtml(selected.production)}</p>
           <p><strong>Coste:</strong> ${escapeHtml(selected.costLabel)} | <strong>Tiempo:</strong> ${escapeHtml(selected.timeLabel)}</p>
           <p><strong>Interactividad:</strong> ${escapeHtml(levelText(selected.interactivityLevel))} | <strong>Escalabilidad:</strong> ${escapeHtml(levelText(selected.scalabilityLevel))}</p>
         </section>
 
         <section class="detail-block">
-          <h4>Requisitos tecnicos</h4>
+          <h4>Requisitos técnicos</h4>
           ${listMarkup(selected.technical)}
         </section>
 
@@ -220,14 +236,14 @@
         </section>
 
         <section class="detail-block">
-          <h4>Metricas clave</h4>
+          <h4>Métricas clave</h4>
           ${listMarkup(selected.metrics)}
         </section>
 
         <section class="detail-block">
           <h4>Ejemplos y referencias</h4>
           <p><strong>Ejemplos:</strong></p>
-          ${listMarkup(selected.examples)}
+          ${examplesMarkup(selected.examples)}
           <p><strong>Base de evidencia:</strong></p>
           ${listMarkup(selected.references)}
         </section>
@@ -244,7 +260,7 @@
         <thead>
           <tr>
             <th>Formato</th>
-            <th>Categoria</th>
+            <th>Categoría</th>
             <th>Coste</th>
             <th>Tiempo</th>
             <th>Interactividad</th>
@@ -272,7 +288,7 @@
 
     const compact = rows.slice(0, 8);
     elements.chartWrap.innerHTML = `
-      <h3>Indice relativo coste/tiempo</h3>
+      <h3>Índice relativo coste/tiempo</h3>
       <p class="results-info">Escala 1-10 para priorizar roadmap de prototipado.</p>
       <div class="chart-stack">
         ${compact

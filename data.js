@@ -1,37 +1,37 @@
 window.INNOHUB_DATA = {
   project: {
-    title: "Biblia de formatos audiovisuales para innovacion en divulgacion cientifica",
+    title: "Biblia de formatos audiovisuales para innovación en divulgación científica",
     subtitle: "Repositorio web operativo del proyecto innoHUB UNIR",
     summary:
-      "Esta version digital traduce la investigacion de innoHUB a un sistema accionable para disenar, prototipar y validar formatos de comunicacion cientifica. Combina criterio academico y viabilidad de produccion.",
+      "Esta versión digital traduce la investigación de innoHUB a un sistema acciónable para diseñar, prototipar y validar formatos de comunicación científica. Combina criterio académico y viabilidad de producción.",
     goals: [
-      "Sistematizar formatos con una ficha estandar: objetivo, tecnica, coste-tiempo, riesgos y medicion.",
-      "Facilitar decisiones editoriales segun impacto buscado: conocimiento, confianza, habilidades o accion.",
-      "Servir como memoria metodologica abierta y base para transferir el servicio a terceros."
+      "Sistematizar formatos con una ficha estándar: objetivo, técnica, coste-tiempo, riesgos y medición.",
+      "Fácilitar decisiones editoriales según impacto buscado: conocimiento, confianza, habilidades o acción.",
+      "Servir como memoria metodológica abierta y base para transferir el servicio a terceros."
     ],
     scope: [
-      "Ambito: universidades, medios, instituciones culturales, EdTech y equipos de divulgacion.",
+      "Ámbito: universidades, medios, instituciones culturales, EdTech y equipos de divulgación.",
       "Fase: repositorio inicial basado en Proyecto innoHUB UNIR.docx + Biblia formatos audiovisuales.pdf."
     ],
     status:
-      "Version 0.1 web. Contenido inicial normalizado desde la investigacion. Requiere validacion editorial continua."
+      "Versión 0.1 web. Contenido inicial normalizado desde la investigación. Requiere validación editorial continua."
   },
   pillars: [
-    "Aprendizaje multimedia: reducir carga cognitiva, senalizar lo relevante y coordinar audio-imagen.",
-    "Narrativa y persuasion: usar storytelling para conectar sin sacrificar rigor cientifico.",
-    "Evaluacion con teoria del cambio: medir resultados mas alla de views (comprension, confianza, accion)."
+    "Aprendizaje multimedia: reducir carga cognitiva, señalizar lo relevante y coordinar audio-imagen.",
+    "Narrativa y persuasión: usar storytelling para conectar sin sacrificar rigor científico.",
+    "Evaluación con teoría del cambio: medir resultados más allá de views (comprensión, confianza, acción)."
   ],
   taxonomy: [
     "Linealidad: lineal vs no lineal (ramificado, explorable).",
     "Interactividad: nula, ligera o fuerte.",
-    "Inmersion: pantalla plana, 360, VR HMD, AR/WebXR.",
-    "Serialidad: pieza unica, serie o universo transmedia.",
-    "IA generativa: asistida, hibrida o generada.",
-    "Distribucion: redes, web propia, LMS, OTT, apps y museos."
+    "Inmersión: pantalla plana, 360, VR HMD, AR/WebXR.",
+    "Serialidad: pieza única, serie o universo transmedia.",
+    "IA generativa: asistida, híbrida o generada.",
+    "Distribución: redes, web propia, LMS, OTT, apps y museos."
   ],
   decisionTree: [
     {
-      objective: "Conocimiento y comprension",
+      objective: "Conocimiento y comprensión",
       recommendation:
         "Short vertical + recursos, video interactivo con quizzes, explorable simulations, mapa data-storytelling."
     },
@@ -43,78 +43,81 @@ window.INNOHUB_DATA = {
     {
       objective: "Habilidades y transferencia",
       recommendation:
-        "Video ramificado, simulaciones interactivas, VR con HMD para practica guiada."
+        "Video ramificado, simulaciones interactivas, VR con HMD para práctica guiada."
     },
     {
-      objective: "Accion y participacion",
+      objective: "Acción y participación",
       recommendation:
         "Universo transmedia, social AR con UGC, retos comunitarios con mapa interactivo."
     }
   ],
   governance: [
-    "Transparencia: disclosure de contenido alterado o sintetico y etiquetado coherente en plataforma.",
-    "Cumplimiento UE: alinear flujos de IA con AI Act, privacidad y proteccion de datos.",
-    "Gestion de riesgos: controlar sesgos, alucinaciones y sobre-simplificacion en formatos virales.",
-    "Proveniencia y trazabilidad: usar estandares tipo C2PA/Content Credentials cuando aplique.",
-    "Definition of Done por ficha: rigor cientifico, claridad narrativa, accesibilidad y medicion instrumentada."
+    "Transparencia: disclosure de contenido alterado o sintético y etiquetado coherente en plataforma.",
+    "Cumplimiento UE: alinear flujos de IA con AI Act, privacidad y protección de datos.",
+    "Gestión de riesgos: controlar sesgos, alucinaciones y sobre-simplificación en formatos virales.",
+    "Proveniencia y trazabilidad: usar estándares tipo C2PA/Content Credentials cuando aplique.",
+    "Definition of Done por ficha: rigor científico, claridad narrativa, accesibilidad y medición instrumentada."
   ],
   templateFields: [
-    "Definicion breve del formato (1-2 lineas).",
-    "Objetivo principal de divulgacion.",
-    "Duracion tipica y extremos.",
-    "Mecanicas de interaccion.",
-    "Requisitos tecnicos y de distribucion.",
-    "Pipeline: pre, produccion, post, publicacion, mantenimiento.",
-    "Equipo minimo (roles y perfiles).",
+    "Definición breve del formato (1-2 líneas).",
+    "Objetivo principal de divulgación.",
+    "Duración típica y extremos.",
+    "Mecánicas de interacción.",
+    "Requisitos técnicos y de distribución.",
+    "Pipeline: pre, producción, post, publicación, mantenimiento.",
+    "Equipo mínimo (roles y perfiles).",
     "Coste y tiempo orientativo.",
-    "Metricas nativas de plataforma.",
-    "Metricas de impacto cientifico (comprension, confianza, accion).",
+    "Métricas nativas de plataforma.",
+    "Métricas de impacto científico (comprensión, confianza, acción).",
     "Riesgos cognitivos, reputacionales y legales.",
-    "Checklist de calidad cientifica.",
+    "Checklist de calidad científica.",
     "Ejemplos reales.",
     "Referencias y evidencia de soporte."
   ],
   formats: [
     {
       id: "short-vertical",
-      name: "Pildora vertical short-form science",
+      name: "Píldora vertical short-form science",
       category: "social",
       type: "Video corto",
       audience: "General y joven",
-      objective: "Alfabetizacion cientifica rapida y puerta de entrada a contenidos largos.",
+      objective: "Alfabetización científica rápida y puerta de entrada a contenidos largos.",
       definition:
-        "Video vertical breve para explicar conceptos, desmontar mitos o lanzar mini historias cientificas en scroll.",
+        "Video vertical breve para explicar conceptos, desmontar mitos o lanzar mini historias científicas en scroll.",
       technical: [
         "Formato 9:16 full-screen.",
-        "Ritmo rapido y subtitulos de facto obligatorios.",
-        "Publicacion multicanal: TikTok, Reels, Shorts."
+        "Ritmo rápido y subtítulos de facto obligatorios.",
+        "Publicación multicanal: TikTok, Reels, Shorts."
       ],
       production:
-        "Equipo minimo: 1 creador/a + revision experta puntual. Herramientas: movil, micro de solapa y editor rapido.",
+        "Equipo mínimo: 1 creador/a + revisión experta puntual. Herramientas: móvil, micro de solapa y editor rápido.",
       costLabel: "0-2k EUR por pieza",
-      timeLabel: "Horas a 2 dias",
+      timeLabel: "Horas a 2 días",
       interactivityLevel: 1,
       scalabilityLevel: 5,
       costIndex: 2,
       timeIndex: 2,
       pros: [
         "Gran alcance y descubrimiento.",
-        "Muy util para desmentidos rapidos.",
+        "Muy util para desmentidos rápidos.",
         "Permite iterar guion y estilo a alta velocidad."
       ],
       risks: [
-        "Simplificacion excesiva.",
-        "Mayor exposicion a desinformacion si no hay framing claro."
+        "Simplificación excesiva.",
+        "Mayor exposición a desinformación si no hay framing claro."
       ],
       metrics: [
-        "Retencion y completion.",
+        "Retención y completion.",
         "Tiempo medio visto y replays.",
         "Compartidos/guardados y CTR hacia pieza larga."
       ],
-      examples: ["Feed STEM en TikTok Europa", "Programa #LearnOnTikTok"],
+      examples: [
+        { name: "Feed STEM en TikTok Europa", url: "https://newsroom.tiktok.com/es-es/tiktok-lanza-un-feed-dedicado-a-contenidos-stem-en-toda-europa" },
+        { name: "Programa #LearnOnTikTok", url: "https://www.tiktok.com/tag/LearnOnTikTok" }
+      ],
       references: [
-        "Evidencia de microlearning y video corto en aprendizaje/retencion.",
-        "Analisis comparados de engagement cientifico por plataforma."
+        "Evidencia de microlearning y video corto en aprendizaje/retención.",
+        "Analisis comparados de engagement científico por plataforma."
       ]
     },
     {
@@ -123,18 +126,18 @@ window.INNOHUB_DATA = {
       category: "social",
       type: "Live streaming",
       audience: "General y comunidad",
-      objective: "Aumentar cercania, confianza y resolucion de dudas en tiempo real.",
+      objective: "Aumentar cercanía, confianza y resolución de dudas en tiempo real.",
       definition:
-        "Emision en directo con chat, preguntas, encuestas e invitados para AMAs, demos o eventos cientificos.",
+        "Emisión en directo con chat, preguntas, encuestas e invitados para AMAs, demos o eventos científicos.",
       technical: [
-        "Stack tipico: OBS + plataforma live.",
-        "Necesidad de codificacion estable y moderacion activa.",
+        "Stack típico: OBS + plataforma live.",
+        "Necesidad de codificación estable y moderación activa.",
         "Reciclable en clips verticales post-evento."
       ],
       production:
-        "Equipo minimo: host cientifico + moderacion + tecnico (puede comprimirse en setups pequenos).",
+        "Equipo mínimo: host científico + moderación + técnico (puede comprimirse en setups pequeños).",
       costLabel: "0-6k EUR por evento",
-      timeLabel: "1-5 dias + directo",
+      timeLabel: "1-5 días + directo",
       interactivityLevel: 4,
       scalabilityLevel: 3,
       costIndex: 3,
@@ -142,17 +145,20 @@ window.INNOHUB_DATA = {
       pros: [
         "Humaniza la ciencia.",
         "Resuelve dudas al instante.",
-        "Fuerte construccion de comunidad."
+        "Fuerte construcción de comunidad."
       ],
-      risks: ["Riesgo reputacional por errores en vivo.", "Dependencia de moderacion para controlar ruido y trolls."],
+      risks: ["Riesgo reputacional por errores en vivo.", "Dependencia de moderación para controlar ruido y trolls."],
       metrics: [
         "Concurrencia media y pico.",
         "Watch time total.",
         "Mensajes/minuto y ratio de chatters.",
-        "Retencion hasta tramo Q&A."
+        "Retención hasta tramo Q&A."
       ],
-      examples: ["NASA en Twitch", "CdeCiencia en Twitch"],
-      references: ["Revisiones sobre Twitch para comunicacion cientifica y educativa."]
+      examples: [
+        { name: "NASA en Twitch", url: "https://www.twitch.tv/nasa" },
+        { name: "CdeCiencia en Twitch", url: "https://www.twitch.tv/cdeciencia" }
+      ],
+      references: ["Revisiones sobre Twitch para comunicación científica y educativa."]
     },
     {
       id: "videopodcast",
@@ -160,52 +166,54 @@ window.INNOHUB_DATA = {
       category: "hibrido",
       type: "Conversacional multiformato",
       audience: "General y profesional",
-      objective: "Combinar profundidad y eficiencia de reutilizacion en un solo flujo.",
+      objective: "Combinar profundidad y eficiencia de reutilización en un solo flujo.",
       definition:
         "Formato grabado (o falso directo) que sale como episodio largo y se atomiza en clips para redes.",
       technical: [
-        "Grabacion multicamara o camara unica + apoyo.",
+        "Grabación multicámara o cámara única + apoyo.",
         "Version audio para feed podcast.",
-        "Derivacion sistematica de clips verticales."
+        "Derivación sistemática de clips verticales."
       ],
       production:
-        "Equipo minimo: host + invitado/a + editor/a. Requiere estructura de guion para evitar dispersion.",
+        "Equipo mínimo: host + invitado/a + editor/a. Requiere estructura de guion para evitar dispersión.",
       costLabel: "0.3-4k EUR por episodio",
-      timeLabel: "1-3 dias",
+      timeLabel: "1-3 días",
       interactivityLevel: 1,
       scalabilityLevel: 4,
       costIndex: 3,
       timeIndex: 3,
       pros: [
-        "Construye autoridad de marca cientifica.",
+        "Construye autoridad de marca científica.",
         "Muy buen ratio contenido/tiempo.",
         "Compatible con OTT, web y social."
       ],
-      risks: ["Conversacion sin foco narrativo.", "Clips sin contexto pueden perder rigor."],
+      risks: ["Conversación sin foco narrativo.", "Clips sin contexto pueden perder rigor."],
       metrics: [
-        "Retencion por minuto en episodio largo.",
+        "Retención por minuto en episodio largo.",
         "Completitud en audio.",
         "Crecimiento de suscriptores y conversiones."
       ],
-      examples: ["Modelo de universo Hope (podcast + mapa + documental)"],
-      references: ["Principios de narrativa multimedia y evaluacion de contenido cientifico en social."]
+      examples: [
+        { name: "Modelo de universo Hope (podcast + mapa + documental)", url: "https://www.rtve.es/rtve/20250425/mapa-interactivo-hope-otra-forma-conocer-acciones-para-mitigar-cambio-climatico/16552704.shtml" }
+      ],
+      references: ["Principios de narrativa multimedia y evaluación de contenido científico en social."]
     },
     {
       id: "transmedia-universe",
       name: "Universo transmedia",
       category: "transmedia",
       type: "Multiplataforma coordinada",
-      audience: "General y subpublicos",
-      objective: "Escalar alcance sin perder profundidad mediante multiples puntos de entrada.",
+      audience: "General y subpúblicos",
+      objective: "Escalar alcance sin perder profundidad mediante múltiples puntos de entrada.",
       definition:
-        "Diseno coordinado de una historia cientifica en serie, mapa, web, podcast, redes y activaciones.",
+        "Diseño coordinado de una historia científica en serie, mapa, web, podcast, redes y activaciones.",
       technical: [
-        "Arquitectura hub + satelites.",
+        "Arquitectura hub + satélites.",
         "Gobernanza editorial fuerte y control de versiones.",
-        "Dependencia alta de coordinacion y analitica."
+        "Dependencia alta de coordinación y analítica."
       ],
       production:
-        "Equipo minimo: direccion editorial, productor/a transmedia, community, analitica y soporte tecnico.",
+        "Equipo mínimo: dirección editorial, productor/a transmedia, community, analítica y soporte técnico.",
       costLabel: "25k-250k+ EUR (MVP a escala)",
       timeLabel: "6-20 semanas + mantenimiento",
       interactivityLevel: 4,
@@ -214,35 +222,38 @@ window.INNOHUB_DATA = {
       timeIndex: 7,
       pros: [
         "Multiplica puntos de contacto con audiencia.",
-        "Favorece repeticion contextual del aprendizaje.",
-        "Permite capas de participacion progresiva."
+        "Favorece repetición contextual del aprendizaje.",
+        "Permite capas de participación progresiva."
       ],
-      risks: ["Complejidad operativa elevada.", "Incoherencia si no hay direccion unificada."],
+      risks: ["Complejidad operativa elevada.", "Incoherencia si no hay dirección unificada."],
       metrics: [
         "Alcance deduplicado total.",
         "Recorridos cross-plataforma.",
-        "Participacion UGC y calidad de comentarios.",
+        "Participación UGC y calidad de comentarios.",
         "Outcomes pre/post."
       ],
-      examples: ["Universo Atapuerca", "Universo Hope"],
-      references: ["Literatura sobre transmedia en comunicacion cientifica."]
+      examples: [
+        { name: "Universo Atapuerca", url: "https://www.atapuerca.org/" },
+        { name: "Universo Hope", url: "https://www.rtve.es/rtve/20250425/mapa-interactivo-hope-otra-forma-conocer-acciones-para-mitigar-cambio-climatico/16552704.shtml" }
+      ],
+      references: ["Literatura sobre transmedia en comunicación científica."]
     },
     {
       id: "webdoc",
       name: "Webdoc / documental interactivo",
       category: "interactivo",
       type: "Web interactiva no lineal",
-      audience: "Publico motivado",
-      objective: "Explicar sistemas complejos por capas y rutas de exploracion.",
+      audience: "Público motivado",
+      objective: "Explicar sistemas complejos por capas y rutas de exploración.",
       definition:
-        "Obra documental no lineal o semi-lineal donde la persona usuaria navega modulos, extras y decisiones.",
+        "Obra documental no lineal o semi-lineal donde la persona usuaria navega módulos, extras y decisiones.",
       technical: [
         "Front-end web + UX + video por capas.",
-        "Analitica de navegacion por rutas.",
+        "Analítica de navegación por rutas.",
         "Hosting y mantenimiento continuado."
       ],
       production:
-        "Equipo minimo: direccion, guion, realizacion, UX/UI, front-end, QA y analitica.",
+        "Equipo mínimo: dirección, guion, realización, UX/UI, front-end, QA y analítica.",
       costLabel: "15k-200k EUR",
       timeLabel: "8-24 semanas",
       interactivityLevel: 4,
@@ -253,32 +264,34 @@ window.INNOHUB_DATA = {
         "Muy fuerte para causalidad y contexto.",
         "Permite profundidad a demanda."
       ],
-      risks: ["Mayor friccion de entrada que video simple.", "Coste tecnico y QA alto."],
+      risks: ["Mayor fricción de entrada que video simple.", "Coste técnico y QA alto."],
       metrics: [
         "Tiempo en experiencia.",
-        "Rutas mas frecuentes.",
-        "Finalizacion de modulos.",
+        "Rutas más frecuentes.",
+        "Finalización de módulos.",
         "Retorno de usuarios."
       ],
-      examples: ["Sin huella (Lab RTVE)"],
-      references: ["Investigacion sobre webdoc participativo y test de usuario."]
+      examples: [
+        { name: "Sin huella (Lab RTVE)", url: "https://lab.rtve.es/huella-ecologica/es/proyecto/" }
+      ],
+      references: ["Investigación sobre webdoc participativo y test de usuario."]
     },
     {
       id: "data-storytelling",
       name: "Mapa interactivo y data-storytelling",
       category: "interactivo",
-      type: "Visualizacion guiada por datos",
+      type: "Visualización guíada por datos",
       audience: "General y decisores",
       objective: "Anclar evidencia y contexto sin saturar el relato principal.",
       definition:
-        "Historia basada en mapas, series y comparadores con navegacion por scroll, fichas y filtros.",
+        "Historia basada en mapas, series y comparadores con navegación por scroll, fichas y filtros.",
       technical: [
-        "Visualizacion web y cartografia.",
+        "Visualización web y cartografía.",
         "Base de datos y accesibilidad.",
-        "Instrumentacion de eventos analiticos."
+        "Instrumentación de eventos analíticos."
       ],
       production:
-        "Equipo minimo: periodista/cientifico de datos, diseno info, front-end y edicion cientifica.",
+        "Equipo mínimo: periodista/científico de datos, diseño info, front-end y edición científica.",
       costLabel: "10k-120k EUR",
       timeLabel: "4-16 semanas",
       interactivityLevel: 3,
@@ -287,16 +300,18 @@ window.INNOHUB_DATA = {
       timeIndex: 6,
       pros: [
         "Excelente para problemas sistemicos (clima, salud, energia).",
-        "Favorece transparencia metodologica."
+        "Favorece transparencia metodológica."
       ],
-      risks: ["Dependencia de actualizacion de datos y APIs.", "Coste superior al video lineal."],
+      risks: ["Dependencia de actualización de datos y APIs.", "Coste superior al video lineal."],
       metrics: [
         "Profundidad de scroll.",
         "Clicks por capa y rutas.",
-        "Conversion a recursos o accion local."
+        "Conversión a recursos o acción local."
       ],
-      examples: ["Mapa interactivo del universo Hope"],
-      references: ["Principios de aprendizaje multimedia y comunicacion cientifica basada en evidencia."]
+      examples: [
+        { name: "Mapa interactivo del universo Hope", url: "https://www.rtve.es/rtve/20250425/mapa-interactivo-hope-otra-forma-conocer-acciones-para-mitigar-cambio-climatico/16552704.shtml" }
+      ],
+      references: ["Principios de aprendizaje multimedia y comunicación científica basada en evidencia."]
     },
     {
       id: "interactive-video",
@@ -304,7 +319,7 @@ window.INNOHUB_DATA = {
       category: "interactivo",
       type: "Video lineal con capas activas",
       audience: "Estudiantes y publico general",
-      objective: "Mejorar comprension comprobada y evaluacion formativa.",
+      objective: "Mejorar comprensión comprobada y evaluación formativa.",
       definition:
         "Video lineal con preguntas, hotspots, enlaces y microtareas para active learning.",
       technical: [
@@ -312,41 +327,44 @@ window.INNOHUB_DATA = {
         "Integrable en LMS, web propia y landing de curso."
       ],
       production:
-        "Equipo minimo: guion instruccional, edicion, diseno de preguntas e integracion LMS.",
+        "Equipo mínimo: guion instruccional, edición, diseño de preguntas e integración LMS.",
       costLabel: "0.5-8k EUR",
-      timeLabel: "1-10 dias",
+      timeLabel: "1-10 días",
       interactivityLevel: 3,
       scalabilityLevel: 5,
       costIndex: 4,
       timeIndex: 3,
       pros: [
         "Alinea video y aprendizaje activo.",
-        "Genera datos granulares de comprension."
+        "Genera datos granulares de comprensión."
       ],
-      risks: ["Interaccion limitada en redes abiertas.", "Puede sentirse escolar si no se disena bien."],
+      risks: ["Interacción limitada en redes abiertas.", "Puede sentirse escolar si no se diseña bien."],
       metrics: [
         "Tasa de respuesta y acierto por pregunta.",
         "Abandono por minuto.",
         "Reintentos y mejora post-test."
       ],
-      examples: ["H5P Interactive Video"],
+      examples: [
+        { name: "H5P Interactive Video", url: "https://h5p.org/interactive-video" },
+        { name: "Tutorial Interactive Video H5P", url: "https://h5p.org/tutorial-interactive-video" }
+      ],
       references: ["Estudios sobre recursos H5P y outcomes de aprendizaje."]
     },
     {
       id: "branching-video",
       name: "Video ramificado (branching)",
       category: "interactivo",
-      type: "Simulacion de decision audiovisual",
-      audience: "Formacion y publico general",
+      type: "Simulación de decisión audiovisual",
+      audience: "Formación y publico general",
       objective: "Entrenar razonamiento y transferencia en escenarios con consecuencias.",
       definition:
         "Experiencia audiovisual donde la audiencia elige rutas y obtiene resultados distintos.",
       technical: [
-        "Logica de nodos y trazabilidad de decisiones.",
-        "Posible integracion en LMS o plataformas compatibles."
+        "Lógica de nodos y trazabilidad de decisiones.",
+        "Posible integración en LMS o plataformas compatibles."
       ],
       production:
-        "Equipo minimo: guion de experiencia, tablas de decision, rodaje modular y QA.",
+        "Equipo mínimo: guion de experiencia, tablas de decisión, rodaje modular y QA.",
       costLabel: "5k-150k EUR",
       timeLabel: "3-20 semanas",
       interactivityLevel: 5,
@@ -357,13 +375,15 @@ window.INNOHUB_DATA = {
         "Alta capacidad para practicar dilemas y decisiones.",
         "Favorece aprendizaje por escenarios."
       ],
-      risks: ["Explosion combinatoria de guion/rodaje.", "Coste sube rapido si crecen ramas."],
+      risks: ["Explosion combinatoria de guion/rodaje.", "Coste sube rápido si crecen ramas."],
       metrics: [
         "Rutas mas elegidas.",
-        "Tasa de finalizacion por finales.",
-        "Mejora en test de decision."
+        "Tasa de finalización por finales.",
+        "Mejora en test de decisión."
       ],
-      examples: ["Bandersnatch como referencia de formato"],
+      examples: [
+        { name: "Bandersnatch (Black Mirror, Netflix)", url: "https://www.theverge.com/news/663933/netflix-black-mirror-bandersnatch-kimmy-schmidt-removal" }
+      ],
       references: ["Estudios de engagement/aprendizaje en videos ramificados."]
     },
     {
@@ -372,15 +392,15 @@ window.INNOHUB_DATA = {
       category: "interactivo",
       type: "Modelo manipulable",
       audience: "Estudiantes y publico curioso",
-      objective: "Construir intuicion cientifica mediante experimentacion guiada.",
+      objective: "Construir intuición científica mediante experimentación guíada.",
       definition:
         "La persona aprende manipulando variables y observando cambios de sistema en tiempo real.",
       technical: [
-        "HTML5/WebGL o motor 3D segun complejidad.",
-        "Necesita arquitectura didactica para no quedarse en juego."
+        "HTML5/WebGL o motor 3D según complejidad.",
+        "Necesita arquitectura didáctica para no quedarse en juego."
       ],
       production:
-        "Equipo minimo: experto/a cientifico, diseno instruccional y desarrollo.",
+        "Equipo mínimo: experto/a científico, diseño instruccional y desarrollo.",
       costLabel: "5k-200k EUR",
       timeLabel: "4-26 semanas",
       interactivityLevel: 5,
@@ -391,14 +411,17 @@ window.INNOHUB_DATA = {
         "Muy potente para conceptos abstractos.",
         "Reduce misconceptions con feedback inmediato."
       ],
-      risks: ["Sin guia pedagogica pierde valor de aprendizaje.", "Desarrollo tecnico exigente."],
+      risks: ["Sin guía pedagógica pierde valor de aprendizaje.", "Desarrollo técnico exigente."],
       metrics: [
-        "Interacciones por sesion.",
+        "Interacciónes por sesion.",
         "Tiempo explorando.",
         "Patrones de error y logro de objetivos."
       ],
-      examples: ["PhET", "NASA Eyes"],
-      references: ["Meta-analisis sobre simulaciones interactivas en educacion STEM."]
+      examples: [
+        { name: "PhET (simulaciones interactivas)", url: "https://phet.colorado.edu/en/about" },
+        { name: "NASA Eyes on the Solar System", url: "https://eyes.nasa.gov/apps/solar-system" }
+      ],
+      references: ["Meta-análisis sobre simulaciones interactivas en educación STEM."]
     },
     {
       id: "immersive-360",
@@ -406,15 +429,15 @@ window.INNOHUB_DATA = {
       category: "inmersivo",
       type: "Tour/visita 360",
       audience: "General y museos",
-      objective: "Aumentar presencia y comprension espacial de contextos cientificos.",
+      objective: "Aumentar presencia y comprensión espacial de contextos científicos.",
       definition:
-        "Video o entorno 360 consumible en movil, PC o visor, lineal o con hotspots.",
+        "Video o entorno 360 consumible en móvil, PC o visor, lineal o con hotspots.",
       technical: [
         "Captura 360 + stitching + audio espacial.",
         "WebXR opcional para acceso desde navegador."
       ],
       production:
-        "Equipo minimo: operador 360, post 360 y guion de visita.",
+        "Equipo mínimo: operador 360, post 360 y guion de visita.",
       costLabel: "3k-60k EUR",
       timeLabel: "2-10 semanas",
       interactivityLevel: 2,
@@ -422,34 +445,37 @@ window.INNOHUB_DATA = {
       costIndex: 5,
       timeIndex: 5,
       pros: [
-        "Fuerte potencial en patrimonio cientifico y expediciones.",
-        "Puede mejorar empatia y orientacion espacial."
+        "Fuerte potencial en patrimonio científico y expediciónes.",
+        "Puede mejorar empatia y orientación espacial."
       ],
       risks: ["Mareo y fatiga en algunos perfiles.", "Puede quedar en solo efecto wow."],
       metrics: [
         "Tiempo en escena.",
         "Clicks en hotspots.",
-        "Finalizacion y mapas de mirada (si disponibles)."
+        "Finalización y mapas de mirada (si disponibles)."
       ],
-      examples: ["Visitas virtuales MNCN", "Exploraciones marinas 360"],
-      references: ["Revisiones sobre video 360 en aprendizaje y comunicacion."]
+      examples: [
+        { name: "Visitas virtuales MNCN", url: "https://www.mncn.csic.es/es/visita-el-mncn/exposiciones/visitas-virtuales" },
+        { name: "O mar en 360º (exploración marina)", url: "https://cadenaser.com/galicia/2025/07/06/explora-el-fondo-marino-de-las-illas-atlanticas-gracias-a-la-realidad-virtual-radio-vigo/" }
+      ],
+      references: ["Revisiones sobre video 360 en aprendizaje y comunicación."]
     },
     {
       id: "vr-hmd",
       name: "VR con HMD",
       category: "inmersivo",
-      type: "Simulacion inmersiva alta",
-      audience: "Formacion y museos",
-      objective: "Practica procedimental y visualizacion de escenarios imposibles.",
+      type: "Simulación inmersiva alta",
+      audience: "Formación y museos",
+      objective: "Practica procedimental y visualización de escenarios imposibles.",
       definition:
         "Experiencia con visor y controladores para simular laboratorio, procesos o escalas complejas.",
       technical: [
         "Motores 3D de tiempo real (Unity/Unreal).",
-        "Logistica de visores, higiene y soporte.",
+        "Logística de visores, higiene y soporte.",
         "QA intenso en rendimiento y confort."
       ],
       production:
-        "Equipo minimo: productor VR, diseno de interaccion, modelado 3D, programacion y QA.",
+        "Equipo mínimo: productor VR, diseño de interacción, modelado 3D, programación y QA.",
       costLabel: "30k-500k+ EUR",
       timeLabel: "10-40 semanas",
       interactivityLevel: 5,
@@ -458,33 +484,36 @@ window.INNOHUB_DATA = {
       timeIndex: 9,
       pros: [
         "Alto potencial para habilidades y presencia.",
-        "Puede mejorar retencion en escenarios concretos."
+        "Puede mejorar retención en escenarios concretos."
       ],
       risks: ["Coste alto y mantenimiento continuo.", "Riesgo de cybersickness."],
       metrics: [
         "Tiempo de tarea y errores.",
-        "Repeticion de practica.",
-        "Aprendizaje retenido y percepcion de presencia."
+        "Repeticion de práctica.",
+        "Aprendizaje retenido y percepción de presencia."
       ],
-      examples: ["Cajal VR", "Atapuerca VR"],
-      references: ["Meta-analisis sobre VR inmersiva y rendimiento de aprendizaje."]
+      examples: [
+        { name: "Cajal VR (Museo de Ciencias Naturales)", url: "https://santiagoramonycajal.org/2024/03/14/cajal-vr-en-el-museo-de-ciencias-naturales-de-madrid/" },
+        { name: "Atapuerca VR (residencias)", url: "https://cadenaser.com/castillayleon/2025/06/05/atapuerca-un-paseo-por-la-evolucion-desde-residencias-de-mayores-de-burgos-con-visores-de-realidad-virtual-radio-castilla/" }
+      ],
+      references: ["Meta-análisis sobre VR inmersiva y rendimiento de aprendizaje."]
     },
     {
       id: "ar-webxr",
-      name: "AR educativa (movil/WebXR)",
+      name: "AR educativa (móvil/WebXR)",
       category: "inmersivo",
       type: "Capa digital sobre entorno fisico",
-      audience: "General y educacion",
-      objective: "Aprendizaje situado y visualizacion de fenomenos invisibles.",
+      audience: "General y educación",
+      objective: "Aprendizaje situado y visualización de fenómenos invisibles.",
       definition:
         "Capas AR para modelos 3D, recorridos geolocalizados o experiencias contextuales en campo/museo.",
       technical: [
         "AR nativa (ARKit/ARCore) o web (WebXR).",
-        "Pruebas en multiples dispositivos.",
-        "Atencion a obsolescencia de plataformas."
+        "Pruebas en múltiples dispositivos.",
+        "Atención a obsolescencia de plataformas."
       ],
       production:
-        "Equipo minimo: modelado 3D, interaccion y QA multiplataforma.",
+        "Equipo mínimo: modelado 3D, interacción y QA multiplataforma.",
       costLabel: "5k-200k EUR",
       timeLabel: "4-20 semanas",
       interactivityLevel: 4,
@@ -493,15 +522,17 @@ window.INNOHUB_DATA = {
       timeIndex: 7,
       pros: [
         "Muy buena conexion entre contenido y territorio.",
-        "Alta recordacion en experiencias guiadas."
+        "Alta recordación en experiencias guíadas."
       ],
-      risks: ["Fragmentacion tecnologica.", "Dependencia del parque de dispositivos."],
+      risks: ["Fragmentación tecnológica.", "Dependencia del parque de dispositivos."],
       metrics: [
         "Activaciones y tiempo de uso.",
         "Microquizzes en contexto.",
-        "Tasa de finalizacion de recorrido."
+        "Tasa de finalización de recorrido."
       ],
-      examples: ["Recorridos AR educativos", "WebXR para visualizacion cientifica"],
+      examples: [
+        { name: "WebXR Device API (estándar W3C)", url: "https://www.w3.org/TR/webxr/" }
+      ],
       references: ["Revisiones de AR en STEM con mejoras de learning gains."]
     },
     {
@@ -510,15 +541,15 @@ window.INNOHUB_DATA = {
       category: "inmersivo",
       type: "AR participativa en redes",
       audience: "General",
-      objective: "Activar participacion, UGC y alcance social alrededor de ciencia.",
+      objective: "Activar participación, UGC y alcance social alrededor de ciencia.",
       definition:
-        "Efectos AR en plataforma social para convertir conceptos cientificos en experiencias compartibles.",
+        "Efectos AR en plataforma social para convertir conceptos científicos en experiencias compartibles.",
       technical: [
-        "Toolchains de creacion de efectos por plataforma.",
+        "Toolchains de creación de efectos por plataforma.",
         "Necesita pruebas de usabilidad y claridad del reto."
       ],
       production:
-        "Equipo minimo: diseno de efecto + produccion 3D ligera + QA.",
+        "Equipo mínimo: diseño de efecto + producción 3D ligera + QA.",
       costLabel: "3k-80k EUR",
       timeLabel: "3-12 semanas",
       interactivityLevel: 5,
@@ -526,93 +557,99 @@ window.INNOHUB_DATA = {
       costIndex: 4,
       timeIndex: 4,
       pros: [
-        "Participacion alta con baja friccion.",
-        "Facil conversion a dinamicas de reto y comunidad."
+        "Participación alta con baja fricción.",
+        "Fácil conversión a dinámicas de reto y comunidad."
       ],
       risks: ["Vida util corta por dinamica de plataforma.", "Dependencia de cambios de politica/API."],
       metrics: ["Activaciones.", "UGC generado.", "Compartidos.", "Tiempo medio de uso."],
-      examples: ["TikTok Effect House para filtros interactivos"],
-      references: ["Practicas de social AR en comunicacion y educacion digital."]
+      examples: [
+        { name: "TikTok Effect House (filtros y efectos AR)", url: "https://effecthouse.tiktok.com/" }
+      ],
+      references: ["Prácticas de social AR en comunicación y educación digital."]
     },
     {
       id: "ai-avatar",
       name: "IA avatar-presentador",
       category: "ia",
-      type: "Video sintetico",
+      type: "Video sintético",
       audience: "General e internacional",
-      objective: "Escalar versionado rapido con control editorial.",
+      objective: "Escalar versiónado rápido con control editorial.",
       definition:
-        "Pieza donde un avatar sintetico presenta contenido cientifico con guion supervisado.",
+        "Pieza donde un avatar sintético presenta contenido científico con guion supervisado.",
       technical: [
-        "Pipeline de guion -> sintesis -> revision experta.",
-        "Requiere disclosure explicito y trazabilidad."
+        "Pipeline de guion -> síntesis -> revisión experta.",
+        "Requiere disclosure explícito y trazabilidad."
       ],
       production:
-        "Equipo minimo: editor cientifico, guionista, operador IA y QA.",
+        "Equipo mínimo: editor científico, guionista, operador IA y QA.",
       costLabel: "0.3-10k EUR",
-      timeLabel: "Horas a dias + QA",
+      timeLabel: "Horas a días + QA",
       interactivityLevel: 2,
       scalabilityLevel: 5,
       costIndex: 2,
       timeIndex: 1,
       pros: [
-        "Escalabilidad alta para multiversion.",
-        "Buena velocidad de actualizacion."
+        "Escalabilidad alta para multiversión.",
+        "Buena velocidad de actualización."
       ],
-      risks: ["Riesgo de perdida de confianza si hay opacidad.", "Errores factuales si no hay control experto."],
+      risks: ["Riesgo de pérdida de confianza si hay opacidad.", "Errores factuales si no hay control experto."],
       metrics: [
         "Comprension y confianza percibida.",
-        "Deteccion de errores y tasa de correccion."
+        "Detección de errores y tasa de corrección."
       ],
-      examples: ["Experimentos de avatares IA en comunicacion cientifica"],
+      examples: [
+        { name: "Experimentos de avatares IA en comunicación científica", url: "https://jcom.sissa.it/article/pubid/JCOM_2402_2025_A03/" }
+      ],
       references: ["Estudios IA vs humano en video docente (aprendizaje equivalente en algunos contextos)."]
     },
     {
       id: "ai-dubbing",
-      name: "IA doblaje y traduccion",
+      name: "IA doblaje y traducción",
       category: "ia",
-      type: "Localizacion automatizada",
+      type: "Localización automatizada",
       audience: "Global",
       objective: "Expandir cobertura idiomatica y accesibilidad con coste marginal bajo.",
       definition:
-        "Uso de TTS y traduccion IA para publicar variantes de una pieza manteniendo base editorial.",
+        "Uso de TTS y traducción IA para publicar variantes de una pieza manteniendo base editorial.",
       technical: [
-        "Control de terminologia cientifica.",
-        "Revision de sincronizacion y calidad de voz.",
+        "Control de terminología científica.",
+        "Revisión de sincronización y calidad de voz.",
         "Versionado por idioma con metadatos claros."
       ],
       production:
-        "Equipo minimo: editor cientifico + operador de localizacion + QA linguistico.",
+        "Equipo mínimo: editor científico + operador de localización + QA lingüístico.",
       costLabel: "0.2-5k EUR",
-      timeLabel: "Horas a dias",
+      timeLabel: "Horas a días",
       interactivityLevel: 1,
       scalabilityLevel: 5,
       costIndex: 1,
       timeIndex: 1,
       pros: [
-        "Alta eficiencia para internacionalizacion.",
+        "Alta eficiencia para internacionalización.",
         "Mejora accesibilidad del archivo existente."
       ],
-      risks: ["Errores semanticos en terminos tecnicos.", "Percepcion de artificialidad de voz."],
-      metrics: ["Cobertura por idioma.", "Retencion comparada por version.", "Feedback cualitativo de comprension."],
-      examples: ["Doblaje/translation assistida por IA en video corto"],
-      references: ["Practicas recientes de localizacion automatizada en plataformas sociales."]
+      risks: ["Errores semánticos en términos técnicos.", "Percepción de artificialidad de voz."],
+      metrics: ["Cobertura por idioma.", "Retención comparada por versión.", "Feedback cualitativo de comprensión."],
+      examples: [
+        { name: "Meta: traducción y doblaje de Reels con IA", url: "https://www.theverge.com/news/761665/meta-ai-translation-facebook-instagram-reels" }
+      ],
+      references: ["Prácticas recientes de localización automatizada en plataformas sociales."]
     },
     {
       id: "ott-docuserie",
-      name: "OTT cientifico (docuserie/factual)",
+      name: "OTT científico (docuserie/factual)",
       category: "ott",
       type: "Largo recorrido",
       audience: "General",
-      objective: "Profundidad narrativa y archivo evergreen en distribucion de calidad.",
+      objective: "Profundidad narrativa y archivo evergreen en distribución de calidad.",
       definition:
-        "Distribucion en plataformas OTT VOD/AVOD/FAST con series documentales y factual de ciencia.",
+        "Distribución en plataformas OTT VOD/AVOD/FAST con series documentales y factual de ciencia.",
       technical: [
         "Flujos de entrega broadcast/OTT (HLS, DASH, metadata).",
-        "Ventanas, rights y estandares de calidad estrictos."
+        "Ventanas, rights y estándares de calidad estrictos."
       ],
       production:
-        "Equipo completo de produccion audiovisual + desarrollo editorial largo.",
+        "Equipo completo de producción audiovisual + desarrollo editorial largo.",
       costLabel: "60k EUR a millones",
       timeLabel: "Meses",
       interactivityLevel: 1,
@@ -623,14 +660,16 @@ window.INNOHUB_DATA = {
         "Alta legitimidad de marca y profundidad.",
         "Mayor tolerancia a complejidad narrativa."
       ],
-      risks: ["Ciclo largo y poca iteracion.", "Barreras de adquisicion y negociacion de ventanas."],
+      risks: ["Ciclo largo y poca iteración.", "Barreras de adquisición y negociación de ventanas."],
       metrics: [
         "Minutos vistos y completion por episodio.",
-        "Retencion de serie y binge rate.",
-        "Churn/retencion segun modelo de negocio."
+        "Retención de serie y binge rate.",
+        "Churn/retención según modelo de negocio."
       ],
-      examples: ["Catalogos de ciencia/naturaleza en OTT global"],
-      references: ["Medicion convergente de audiencias y marcos de evaluacion OTT."]
+      examples: [
+        { name: "Documentales de ciencia y naturaleza en Netflix", url: "https://www.netflix.com/us-es/browse/genre/2595" }
+      ],
+      references: ["Medición convergente de audiencias y marcos de evaluación OTT."]
     }
   ]
 };
