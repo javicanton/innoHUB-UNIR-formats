@@ -39,10 +39,12 @@
 
   function embedFromUrl(url, title) {
     if (/instagram\.com/i.test(url)) {
-      return `<iframe src="${escapeHtml(url)}embed" title="${escapeHtml(title)}" loading="lazy" allowfullscreen></iframe>`;
+      return `<blockquote class="instagram-media" data-instgrm-permalink="${escapeHtml(url)}" data-instgrm-version="14"></blockquote>`;
     }
     if (/tiktok\.com/i.test(url)) {
-      return `<iframe src="${escapeHtml(url)}" title="${escapeHtml(title)}" loading="lazy" allowfullscreen></iframe>`;
+      const match = url.match(/\/video\/(\d+)/);
+      const embedUrl = match ? `https://www.tiktok.com/embed/v2/${match[1]}` : url;
+      return `<iframe src="${escapeHtml(embedUrl)}" title="${escapeHtml(title)}" loading="lazy" allowfullscreen></iframe>`;
     }
     if (/youtube\.com|youtu\.be/i.test(url)) {
       let embedUrl = url;
