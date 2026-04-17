@@ -29,6 +29,7 @@
     decisionGrid: document.getElementById("decisionGrid"),
     governanceList: document.getElementById("governanceList"),
     templateList: document.getElementById("templateList"),
+    successCasesGrid: document.getElementById("successCasesGrid"),
     cardsGrid: document.getElementById("cardsGrid"),
     detailPanel: document.getElementById("detailPanel"),
     matrixTableWrap: document.getElementById("matrixTableWrap"),
@@ -94,6 +95,58 @@
 
     elements.governanceList.innerHTML = data.governance.map((item) => `<li>${escapeHtml(item)}</li>`).join("");
     elements.templateList.innerHTML = data.templateFields.map((item) => `<li>${escapeHtml(item)}</li>`).join("");
+  }
+
+  function renderSuccessCases() {
+    if (!elements.successCasesGrid) return;
+    if (!Array.isArray(data.successCases) || !data.successCases.length) {
+      elements.successCasesGrid.innerHTML = `<article class="empty-state">Aún no hay casos documentados.</article>`;
+      return;
+    }
+
+    elements.successCasesGrid.innerHTML = data.successCases
+      .map(
+        (item) => `
+          <article class="panel success-case-card">
+            <p class="eyebrow">${escapeHtml(item.organization)}</p>
+            <h3>${escapeHtml(item.title)}</h3>
+            <p class="case-format"><strong>Formato aplicado:</strong> ${escapeHtml(item.format)}</p>
+            <div class="detail-grid">
+              <section class="detail-block">
+                <h4>Reto</h4>
+                <p>${escapeHtml(item.challenge)}</p>
+              </section>
+              <section class="detail-block">
+                <h4>Implementación</h4>
+                <p>${escapeHtml(item.approach)}</p>
+              </section>
+              <section class="detail-block">
+                <h4>Resultado</h4>
+                <p>${escapeHtml(item.outcome)}</p>
+              </section>
+              <section class="detail-block">
+                <h4>Lecciones transferibles</h4>
+                ${listMarkup(item.transferableLearnings || [])}
+              </section>
+              <section class="detail-block">
+                <h4>Fuentes</h4>
+                <ul>
+                  ${(item.sources || [])
+                    .map(
+                      (source) => `
+                        <li>
+                          <a href="${escapeHtml(source.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(source.name)}</a>
+                        </li>
+                      `
+                    )
+                    .join("")}
+                </ul>
+              </section>
+            </div>
+          </article>
+        `
+      )
+      .join("");
   }
 
   function renderCategoryFilter() {
@@ -444,6 +497,7 @@
 
   renderProject();
   renderFramework();
+  renderSuccessCases();
   renderCategoryFilter();
   updateKPIs();
   setupEvents();

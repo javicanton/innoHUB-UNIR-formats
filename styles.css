@@ -494,6 +494,21 @@ select {
   gap: 16px;
 }
 
+.success-cases-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.success-case-card h3 {
+  margin-bottom: 8px;
+}
+
+.case-format {
+  margin: 0 0 12px;
+  color: #3d3328;
+}
+
 table {
   width: 100%;
   border-collapse: collapse;
@@ -721,6 +736,7 @@ th {
 
   .catalog-layout,
   .matrix-layout,
+  .success-cases-grid,
   .framework-grid {
     grid-template-columns: 1fr;
   }

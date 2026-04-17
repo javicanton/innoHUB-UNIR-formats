@@ -74,6 +74,62 @@ window.INNOHUB_DATA = {
     "Ejemplos reales.",
     "Referencias y evidencia de soporte."
   ],
+  successCases: [
+    {
+      id: "prado-digital-social",
+      title: "Museo del Prado: estrategia short-form en TikTok",
+      organization: "Museo Nacional del Prado",
+      format: "Píldora vertical short-form + live cultural",
+      challenge:
+        "Acercar contenidos de arte e historia a audiencias jóvenes sin perder rigor curatorial.",
+      approach:
+        "El museo abrió y profesionalizó su canal de TikTok con piezas cortas explicativas, tono divulgativo y participación de especialistas del propio museo.",
+      outcome:
+        "Reconocimiento internacional como iniciativa destacada en arte y cultura digital, con gran tracción en público joven y crecimiento de comunidad.",
+      transferableLearnings: [
+        "Convertir conocimiento experto en piezas breves y serializadas mejora alcance.",
+        "La presencia de perfiles técnicos/curatoriales refuerza credibilidad.",
+        "El formato corto funciona como puerta de entrada a contenidos más profundos."
+      ],
+      sources: [
+        {
+          name: "Museo del Prado: candidatura internacional por su TikTok",
+          url: "https://www.museodelprado.es/actualidad/noticia/el-tiktok-del-museo-del-prado-candidato-a-la/28a33809-ca29-8d1d-fa71-56f4914b81ac"
+        },
+        {
+          name: "TikTok Newsroom: colaboración con museos europeos (incluye Prado)",
+          url: "https://newsroom.tiktok.com/en-us/museum-el-prado-spain"
+        }
+      ]
+    },
+    {
+      id: "mit-medialab-video-ecosystem",
+      title: "MIT Media Lab: ecosistema de vídeo para investigación",
+      organization: "MIT Media Lab",
+      format: "Microvídeo, piezas de investigación y storytelling audiovisual",
+      challenge:
+        "Comunicar investigación interdisciplinar compleja a audiencias no especialistas y partners globales.",
+      approach:
+        "Uso continuo de vídeos cortos, clips de laboratorio y piezas narrativas para explicar proyectos, equipos y resultados con lenguaje visual accesible.",
+      outcome:
+        "Biblioteca audiovisual amplia y actualizada que facilita difusión pública, transferencia y conexión con comunidad internacional.",
+      transferableLearnings: [
+        "Combinar vídeos breves con piezas más profundas permite embudo de comprensión.",
+        "La narrativa visual de proyectos reales mejora comprensión de tecnologías complejas.",
+        "Publicar de forma continua crea memoria de innovación y reputación institucional."
+      ],
+      sources: [
+        {
+          name: "MIT Media Lab - Videos",
+          url: "https://www.media.mit.edu/videos/"
+        },
+        {
+          name: "MIT Media Lab - News + Updates",
+          url: "https://www.media.mit.edu/"
+        }
+      ]
+    }
+  ],
   formats: [
     {
       id: "short-vertical",
