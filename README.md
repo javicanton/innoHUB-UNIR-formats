@@ -11,5 +11,4 @@ Incluye:
 - una página de detalle por formato con información completa y ejemplos;
 - una visualización comparativa y un gráfico de correlación entre variables clave.
 
-La URL pública del sitio es:
-`https://javicanton.github.io/innoHUB-UNIR-formats/`
+Puedes visitar la página en https://javicanton.github.io/innoHUB-UNIR-formats/ 
