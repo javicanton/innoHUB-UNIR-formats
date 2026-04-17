@@ -32,7 +32,7 @@
     cardsGrid: document.getElementById("cardsGrid"),
     detailPanel: document.getElementById("detailPanel"),
     matrixTableWrap: document.getElementById("matrixTableWrap"),
-    chartWrap: document.getElementById("chartWrap"),
+    correlationWrap: document.getElementById("correlationWrap"),
     searchInput: document.getElementById("searchInput"),
     categoryFilter: document.getElementById("categoryFilter"),
     interactivityFilter: document.getElementById("interactivityFilter"),
@@ -144,26 +144,30 @@
   function renderCards(filtered) {
     if (!filtered.length) {
       elements.cardsGrid.innerHTML = `<article class="empty-state">No hay formatos con esos filtros. Ajusta búsqueda o limpia filtros.</article>`;
-      elements.detailPanel.innerHTML = `<p class="empty-state">Selecciona un formato para ver su ficha.</p>`;
+      elements.detailPanel.innerHTML = `<p class="empty-state">Prueba otra combinación para descubrir más formatos.</p>`;
       elements.resultsInfo.textContent = "0 resultados.";
       return;
-    }
-
-    if (!filtered.find((item) => item.id === state.selectedId)) {
-      state.selectedId = filtered[0].id;
     }
 
     elements.cardsGrid.innerHTML = filtered
       .map(
         (item, index) => `
-        <article class="format-card ${item.id === state.selectedId ? "active" : ""}" data-format-id="${item.id}" style="animation-delay:${index * 35}ms">
-          <span class="card-topline">${escapeHtml(categoryLabels[item.category] || item.category)}</span>
+        <article class="format-card" style="animation-delay:${index * 35}ms">
+          <span class="card-topline">
+            <i class="bi bi-diagram-3"></i>
+            ${escapeHtml(categoryLabels[item.category] || item.category)}
+          </span>
           <h3>${escapeHtml(item.name)}</h3>
           <p class="card-desc">${escapeHtml(item.objective)}</p>
-          <div class="card-metrics">
-            <span class="pill">Coste: ${escapeHtml(item.costLabel)}</span>
-            <span class="pill">Tiempo: ${escapeHtml(item.timeLabel)}</span>
-            <span class="pill">Interactividad: ${escapeHtml(levelText(item.interactivityLevel))}</span>
+          <div class="card-kpis">
+            <span><i class="bi bi-cash-coin"></i> ${escapeHtml(item.costLabel)}</span>
+            <span><i class="bi bi-stopwatch"></i> ${escapeHtml(item.timeLabel)}</span>
+            <span><i class="bi bi-hand-index-thumb"></i> ${escapeHtml(levelText(item.interactivityLevel))}</span>
+            <span><i class="bi bi-arrows-angle-expand"></i> ${escapeHtml(levelText(item.scalabilityLevel))}</span>
+          </div>
+          <div class="card-actions">
+            <span class="pill">${escapeHtml(item.type)}</span>
+            <a class="btn btn-primary card-btn" href="format.html?id=${encodeURIComponent(item.id)}">Ver más</a>
           </div>
         </article>
       `
@@ -171,13 +175,6 @@
       .join("");
 
     elements.resultsInfo.textContent = `${filtered.length} formato(s) visibles de ${data.formats.length}.`;
-
-    elements.cardsGrid.querySelectorAll(".format-card").forEach((card) => {
-      card.addEventListener("click", () => {
-        state.selectedId = card.dataset.formatId;
-        render();
-      });
-    });
   }
 
   function listMarkup(items) {
@@ -198,56 +195,28 @@
   }
 
   function renderDetail(filtered) {
-    const selected = filtered.find((item) => item.id === state.selectedId);
-    if (!selected) return;
-
+    const categories = [...new Set(filtered.map((item) => categoryLabels[item.category] || item.category))];
     elements.detailPanel.innerHTML = `
       <div class="detail-head">
         <div>
-          <h3>${escapeHtml(selected.name)}</h3>
-          <span class="detail-tag">${escapeHtml(selected.type)}</span>
+          <h3>Vista sintética del catálogo</h3>
+          <span class="detail-tag">${filtered.length} formato(s) activos</span>
         </div>
       </div>
-      <p class="detail-definition">${escapeHtml(selected.definition)}</p>
-
-      <div class="detail-grid">
-        <section class="detail-block">
-          <h4>Contexto de uso</h4>
-          <p><strong>Publico:</strong> ${escapeHtml(selected.audience)}</p>
-          <p><strong>Objetivo:</strong> ${escapeHtml(selected.objective)}</p>
-          <p><strong>Producción:</strong> ${escapeHtml(selected.production)}</p>
-          <p><strong>Coste:</strong> ${escapeHtml(selected.costLabel)} | <strong>Tiempo:</strong> ${escapeHtml(selected.timeLabel)}</p>
-          <p><strong>Interactividad:</strong> ${escapeHtml(levelText(selected.interactivityLevel))} | <strong>Escalabilidad:</strong> ${escapeHtml(levelText(selected.scalabilityLevel))}</p>
-        </section>
-
-        <section class="detail-block">
-          <h4>Requisitos técnicos</h4>
-          ${listMarkup(selected.technical)}
-        </section>
-
-        <section class="detail-block">
-          <h4>Ventajas</h4>
-          ${listMarkup(selected.pros)}
-        </section>
-
-        <section class="detail-block">
-          <h4>Riesgos</h4>
-          ${listMarkup(selected.risks)}
-        </section>
-
-        <section class="detail-block">
-          <h4>Métricas clave</h4>
-          ${listMarkup(selected.metrics)}
-        </section>
-
-        <section class="detail-block">
-          <h4>Ejemplos y referencias</h4>
-          <p><strong>Ejemplos:</strong></p>
-          ${examplesMarkup(selected.examples)}
-          <p><strong>Base de evidencia:</strong></p>
-          ${listMarkup(selected.references)}
-        </section>
-      </div>
+      <p class="detail-definition">Cada tarjeta resume lo esencial para comparar rápido. Usa <strong>Ver más</strong> para abrir la ficha completa en su propia página y ampliar ejemplos (incluyendo embeds de Instagram/TikTok cuando los añadamos).</p>
+      <section class="detail-block">
+        <h4>Familias en esta selección</h4>
+        ${listMarkup(categories)}
+      </section>
+      <section class="detail-block">
+        <h4>Cómo leer los iconos</h4>
+        <ul>
+          <li><i class="bi bi-cash-coin"></i> Coste estimado</li>
+          <li><i class="bi bi-stopwatch"></i> Tiempo de producción</li>
+          <li><i class="bi bi-hand-index-thumb"></i> Interactividad</li>
+          <li><i class="bi bi-arrows-angle-expand"></i> Escalabilidad</li>
+        </ul>
+      </section>
     `;
   }
 
@@ -286,33 +255,91 @@
       </table>
     `;
 
-    const compact = rows.slice(0, 8);
-    elements.chartWrap.innerHTML = `
-      <h3>Índice relativo coste/tiempo</h3>
-      <p class="results-info">Escala 1-10 para priorizar roadmap de prototipado.</p>
-      <div class="chart-stack">
-        ${compact
-          .map(
-            (item) => `
-              <div class="chart-row">
-                <div class="chart-label">${escapeHtml(item.name)}</div>
-                <div class="chart-bars">
-                  <div class="bar-track">
-                    <div class="bar-fill bar-cost" style="width:${item.costIndex * 10}%"></div>
-                  </div>
-                  <div class="bar-track">
-                    <div class="bar-fill bar-time" style="width:${item.timeIndex * 10}%"></div>
-                  </div>
-                </div>
-              </div>
-            `
-          )
+    renderCorrelation(rows);
+  }
+
+  function categoryColor(category) {
+    const palette = {
+      social: "#0b7a77",
+      hibrido: "#d45f2c",
+      transmedia: "#7b4ea3",
+      interactivo: "#1d70b8",
+      inmersivo: "#aa6f00",
+      ia: "#5d48c6",
+      ott: "#556370"
+    };
+    return palette[category] || "#4e5b66";
+  }
+
+  function scale(value, inMin, inMax, outMin, outMax) {
+    if (inMax === inMin) return (outMin + outMax) / 2;
+    return outMin + ((value - inMin) * (outMax - outMin)) / (inMax - inMin);
+  }
+
+  function renderCorrelation(rows) {
+    if (!rows.length) {
+      elements.correlationWrap.innerHTML = `<p class="empty-state">No hay datos para el gráfico.</p>`;
+      return;
+    }
+
+    const width = 560;
+    const height = 360;
+    const margin = { top: 24, right: 20, bottom: 48, left: 54 };
+    const plotWidth = width - margin.left - margin.right;
+    const plotHeight = height - margin.top - margin.bottom;
+    const minRadius = 6;
+    const maxRadius = 18;
+
+    const points = rows.map((item) => {
+      const x = margin.left + scale(item.interactivityLevel, 1, 5, 0, plotWidth);
+      const y = margin.top + scale(item.scalabilityLevel, 1, 5, plotHeight, 0);
+      const radius = scale(item.costIndex, 1, 10, minRadius, maxRadius);
+      return { item, x, y, radius, color: categoryColor(item.category) };
+    });
+
+    const legendEntries = [...new Set(rows.map((item) => item.category))]
+      .map((category) => `
+        <span class="legend-chip">
+          <i style="background:${categoryColor(category)}"></i>${escapeHtml(categoryLabels[category] || category)}
+        </span>
+      `)
+      .join("");
+
+    const circles = points
+      .map(
+        ({ item, x, y, radius, color }) => `
+          <g>
+            <circle cx="${x.toFixed(2)}" cy="${y.toFixed(2)}" r="${radius.toFixed(2)}" fill="${color}" fill-opacity="0.72" stroke="#ffffff" stroke-width="1.5"></circle>
+            <title>${escapeHtml(item.name)} | Interactividad: ${item.interactivityLevel}, Escalabilidad: ${item.scalabilityLevel}, Coste: ${item.costIndex}</title>
+          </g>
+        `
+      )
+      .join("");
+
+    elements.correlationWrap.innerHTML = `
+      <h3>Correlación: interactividad vs escalabilidad</h3>
+      <p class="results-info">Color = categoría. Tamaño del punto = coste relativo (índice 1-10).</p>
+      <svg class="correlation-svg" viewBox="0 0 ${width} ${height}" role="img" aria-label="Gráfico de correlación">
+        <rect x="${margin.left}" y="${margin.top}" width="${plotWidth}" height="${plotHeight}" fill="#fff" stroke="#d9cdb9"></rect>
+        <line x1="${margin.left}" y1="${margin.top + plotHeight}" x2="${margin.left + plotWidth}" y2="${margin.top + plotHeight}" stroke="#7f7362"></line>
+        <line x1="${margin.left}" y1="${margin.top}" x2="${margin.left}" y2="${margin.top + plotHeight}" stroke="#7f7362"></line>
+        ${[1, 2, 3, 4, 5]
+          .map((tick) => {
+            const x = margin.left + scale(tick, 1, 5, 0, plotWidth);
+            const y = margin.top + scale(tick, 1, 5, plotHeight, 0);
+            return `
+              <line x1="${x}" y1="${margin.top + plotHeight}" x2="${x}" y2="${margin.top + plotHeight + 6}" stroke="#7f7362"></line>
+              <text x="${x}" y="${margin.top + plotHeight + 20}" text-anchor="middle" class="axis-label">${tick}</text>
+              <line x1="${margin.left - 6}" y1="${y}" x2="${margin.left}" y2="${y}" stroke="#7f7362"></line>
+              <text x="${margin.left - 14}" y="${y + 4}" text-anchor="end" class="axis-label">${tick}</text>
+            `;
+          })
           .join("")}
-      </div>
-      <div class="bar-legend">
-        <span class="legend-chip"><i style="background:linear-gradient(120deg,#ea8a41,#d45f2c)"></i>Coste relativo</span>
-        <span class="legend-chip"><i style="background:linear-gradient(120deg,#1f9d98,#0b7a77)"></i>Tiempo relativo</span>
-      </div>
+        ${circles}
+        <text x="${margin.left + plotWidth / 2}" y="${height - 12}" text-anchor="middle" class="axis-title">Interactividad</text>
+        <text x="16" y="${margin.top + plotHeight / 2}" transform="rotate(-90 16 ${margin.top + plotHeight / 2})" text-anchor="middle" class="axis-title">Escalabilidad</text>
+      </svg>
+      <div class="bar-legend">${legendEntries}</div>
     `;
   }
 

@@ -18,6 +18,8 @@ Sitio estático para convertir la investigación de innoHUB en una biblia operat
 | `styles.css`  | Diseño visual y responsive                       |
 | `data.js`     | Base de datos inicial (formatos y metadatos)     |
 | `app.js`      | Lógica de filtros, render de tarjetas y matriz   |
+| `format.html` | Plantilla para ficha completa por formato         |
+| `format.js`   | Render de detalle y ejemplos embebidos            |
 | `404.html`    | Página de error para GitHub Pages                |
 
 ## Uso local
@@ -41,6 +43,7 @@ El proyecto está preparado para publicarse con **GitHub Actions**.
 3. **Despliegue**
    - Cada push a la rama `main` ejecuta el workflow `.github/workflows/pages.yml` y publica el sitio.
    - También puedes lanzarlo a mano en **Actions** → **Deploy to GitHub Pages** → **Run workflow**.
+   - URL actual del despliegue: `https://javicanton.github.io/innoHUB-UNIR-formats/`
 
 4. **URL del sitio**
    - Si el repo se llama `innohub_biblia_web`:  
@@ -60,3 +63,9 @@ El proyecto está preparado para publicarse con **GitHub Actions**.
 - `Biblia formatos audiovisuales.pdf` (catálogo y evidencias).
 
 Esta primera versión normaliza texto extraído del PDF y requiere validación editorial periódica para ampliar y corregir fichas.
+
+## Flujo de catálogo y fichas
+
+- El catálogo (`index.html`) muestra una vista sintética por tarjeta con iconos visuales.
+- Cada tarjeta incluye botón **Ver más** que abre la ficha completa en `format.html?id=<id>`.
+- En la ficha completa, los ejemplos pueden mostrarse como enlace o como embed (`iframe`) para URLs de Instagram/TikTok/YouTube.
