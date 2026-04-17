@@ -113,7 +113,11 @@ window.INNOHUB_DATA = {
       ],
       examples: [
         { name: "Feed STEM en TikTok Europa", url: "https://newsroom.tiktok.com/es-es/tiktok-lanza-un-feed-dedicado-a-contenidos-stem-en-toda-europa" },
-        { name: "Programa #LearnOnTikTok", url: "https://www.tiktok.com/tag/LearnOnTikTok" }
+        { name: "Programa #LearnOnTikTok", url: "https://www.tiktok.com/tag/LearnOnTikTok" },
+        { name: "Instagram Reel 1", url: "https://www.instagram.com/reels/DWUX7wokTJE/", embed: true },
+        { name: "Instagram Reel 2", url: "https://www.instagram.com/reels/DWUX7wokTJE/", embed: true },
+        { name: "YouTube Short 1", url: "https://www.youtube.com/shorts/VOZS5LV9bBw", embed: true },
+        { name: "YouTube Short 2", url: "https://www.youtube.com/shorts/7T3F6uixAnM", embed: true }
       ],
       references: [
         "Evidencia de microlearning y video corto en aprendizaje/retención.",
