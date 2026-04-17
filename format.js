@@ -51,6 +51,9 @@
       if (/youtu\.be/i.test(url)) {
         const shortId = url.split("/").pop();
         embedUrl = `https://www.youtube.com/embed/${shortId}`;
+      } else if (url.includes("/shorts/")) {
+        const shortId = url.split("/shorts/")[1]?.split(/[?#]/)[0];
+        embedUrl = `https://www.youtube.com/embed/${shortId}`;
       } else if (url.includes("watch?v=")) {
         const videoId = new URL(url).searchParams.get("v");
         embedUrl = `https://www.youtube.com/embed/${videoId}`;
@@ -135,4 +138,8 @@
       </section>
     </div>
   `;
+
+  if (window.instgrm?.Embeds?.process) {
+    window.instgrm.Embeds.process();
+  }
 })();

@@ -149,10 +149,14 @@
       return;
     }
 
+    if (!filtered.find((item) => item.id === state.selectedId)) {
+      state.selectedId = filtered[0].id;
+    }
+
     elements.cardsGrid.innerHTML = filtered
       .map(
         (item, index) => `
-        <article class="format-card" style="animation-delay:${index * 35}ms">
+        <article class="format-card ${item.id === state.selectedId ? "active" : ""}" data-format-id="${item.id}" style="animation-delay:${index * 35}ms">
           <span class="card-topline">
             <i class="bi bi-diagram-3"></i>
             ${escapeHtml(categoryLabels[item.category] || item.category)}
@@ -175,6 +179,14 @@
       .join("");
 
     elements.resultsInfo.textContent = `${filtered.length} formato(s) visibles de ${data.formats.length}.`;
+
+    elements.cardsGrid.querySelectorAll(".format-card").forEach((card) => {
+      card.addEventListener("click", (event) => {
+        if (event.target.closest(".card-btn")) return;
+        state.selectedId = card.dataset.formatId;
+        render();
+      });
+    });
   }
 
   function listMarkup(items) {
@@ -195,27 +207,32 @@
   }
 
   function renderDetail(filtered) {
-    const categories = [...new Set(filtered.map((item) => categoryLabels[item.category] || item.category))];
+    const selected = filtered.find((item) => item.id === state.selectedId) || filtered[0];
+    if (!selected) return;
+
     elements.detailPanel.innerHTML = `
       <div class="detail-head">
         <div>
-          <h3>Vista sintética del catálogo</h3>
-          <span class="detail-tag">${filtered.length} formato(s) activos</span>
+          <h3>${escapeHtml(selected.name)}</h3>
+          <span class="detail-tag">${escapeHtml(selected.type)}</span>
         </div>
       </div>
-      <p class="detail-definition">Cada tarjeta resume lo esencial para comparar rápido. Usa <strong>Ver más</strong> para abrir la ficha completa en su propia página y ampliar ejemplos (incluyendo embeds de Instagram/TikTok cuando los añadamos).</p>
+      <p class="detail-definition">${escapeHtml(selected.objective)}</p>
       <section class="detail-block">
-        <h4>Familias en esta selección</h4>
-        ${listMarkup(categories)}
+        <h4>Características básicas</h4>
+        <ul>
+          <li><i class="bi bi-diagram-3"></i> <strong>Categoría:</strong> ${escapeHtml(categoryLabels[selected.category] || selected.category)}</li>
+          <li><i class="bi bi-cash-coin"></i> <strong>Coste:</strong> ${escapeHtml(selected.costLabel)}</li>
+          <li><i class="bi bi-stopwatch"></i> <strong>Tiempo:</strong> ${escapeHtml(selected.timeLabel)}</li>
+          <li><i class="bi bi-hand-index-thumb"></i> <strong>Interactividad:</strong> ${escapeHtml(levelText(selected.interactivityLevel))}</li>
+          <li><i class="bi bi-arrows-angle-expand"></i> <strong>Escalabilidad:</strong> ${escapeHtml(levelText(selected.scalabilityLevel))}</li>
+          <li><i class="bi bi-people"></i> <strong>Público:</strong> ${escapeHtml(selected.audience)}</li>
+        </ul>
       </section>
       <section class="detail-block">
-        <h4>Cómo leer los iconos</h4>
-        <ul>
-          <li><i class="bi bi-cash-coin"></i> Coste estimado</li>
-          <li><i class="bi bi-stopwatch"></i> Tiempo de producción</li>
-          <li><i class="bi bi-hand-index-thumb"></i> Interactividad</li>
-          <li><i class="bi bi-arrows-angle-expand"></i> Escalabilidad</li>
-        </ul>
+        <h4>Acción</h4>
+        <p>Abre la ficha completa para ver requisitos, métricas, riesgos y ejemplos embebidos.</p>
+        <p><a class="btn btn-primary card-btn" href="format.html?id=${encodeURIComponent(selected.id)}">Ver más</a></p>
       </section>
     `;
   }
@@ -308,8 +325,17 @@
     const circles = points
       .map(
         ({ item, x, y, radius, color }) => `
-          <g>
-            <circle cx="${x.toFixed(2)}" cy="${y.toFixed(2)}" r="${radius.toFixed(2)}" fill="${color}" fill-opacity="0.72" stroke="#ffffff" stroke-width="1.5"></circle>
+          <g class="correlation-point"
+             data-name="${encodeURIComponent(item.name)}"
+             data-category="${encodeURIComponent(categoryLabels[item.category] || item.category)}"
+             data-cost="${encodeURIComponent(item.costLabel)}"
+             data-time="${encodeURIComponent(item.timeLabel)}"
+             data-interactivity="${encodeURIComponent(levelText(item.interactivityLevel))}"
+             data-scalability="${encodeURIComponent(levelText(item.scalabilityLevel))}">
+            <a href="format.html?id=${encodeURIComponent(item.id)}">
+              <circle cx="${x.toFixed(2)}" cy="${y.toFixed(2)}" r="${radius.toFixed(2)}" fill="${color}" fill-opacity="0.72" stroke="#ffffff" stroke-width="1.5"></circle>
+              <text x="${(x + radius + 4).toFixed(2)}" y="${(y + 4).toFixed(2)}" class="point-label">${escapeHtml(item.name)}</text>
+            </a>
             <title>${escapeHtml(item.name)} | Interactividad: ${item.interactivityLevel}, Escalabilidad: ${item.scalabilityLevel}, Coste: ${item.costIndex}</title>
           </g>
         `
@@ -339,8 +365,38 @@
         <text x="${margin.left + plotWidth / 2}" y="${height - 12}" text-anchor="middle" class="axis-title">Interactividad</text>
         <text x="16" y="${margin.top + plotHeight / 2}" transform="rotate(-90 16 ${margin.top + plotHeight / 2})" text-anchor="middle" class="axis-title">Escalabilidad</text>
       </svg>
+      <div id="correlationTooltip" class="correlation-tooltip" role="status" aria-live="polite"></div>
       <div class="bar-legend">${legendEntries}</div>
     `;
+
+    const svg = elements.correlationWrap.querySelector(".correlation-svg");
+    const tooltip = elements.correlationWrap.querySelector("#correlationTooltip");
+    if (!svg || !tooltip) return;
+
+    const setTooltip = (event, point) => {
+      const rect = elements.correlationWrap.getBoundingClientRect();
+      const left = event.clientX - rect.left + 14;
+      const top = event.clientY - rect.top + 14;
+      tooltip.style.left = `${left}px`;
+      tooltip.style.top = `${top}px`;
+      tooltip.innerHTML = `
+        <strong>${escapeHtml(decodeURIComponent(point.dataset.name || ""))}</strong>
+        <p><i class="bi bi-diagram-3"></i> ${escapeHtml(decodeURIComponent(point.dataset.category || ""))}</p>
+        <p><i class="bi bi-cash-coin"></i> ${escapeHtml(decodeURIComponent(point.dataset.cost || ""))}</p>
+        <p><i class="bi bi-stopwatch"></i> ${escapeHtml(decodeURIComponent(point.dataset.time || ""))}</p>
+        <p><i class="bi bi-hand-index-thumb"></i> ${escapeHtml(decodeURIComponent(point.dataset.interactivity || ""))}</p>
+        <p><i class="bi bi-arrows-angle-expand"></i> ${escapeHtml(decodeURIComponent(point.dataset.scalability || ""))}</p>
+      `;
+      tooltip.classList.add("visible");
+    };
+
+    svg.querySelectorAll(".correlation-point").forEach((point) => {
+      point.addEventListener("mousemove", (event) => setTooltip(event, point));
+      point.addEventListener("mouseenter", (event) => setTooltip(event, point));
+      point.addEventListener("mouseleave", () => tooltip.classList.remove("visible"));
+      point.addEventListener("focusin", (event) => setTooltip(event, point));
+      point.addEventListener("focusout", () => tooltip.classList.remove("visible"));
+    });
   }
 
   function render() {
