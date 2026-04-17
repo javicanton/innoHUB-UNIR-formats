@@ -790,6 +790,54 @@ window.INNOHUB_DATA = {
         { name: "Documentales de ciencia y naturaleza en Netflix", url: "https://www.netflix.com/us-es/browse/genre/2595" }
       ],
       references: ["Medición convergente de audiencias y marcos de evaluación OTT."]
+    },
+    {
+      id: "video-abstract",
+      name: "Video-abstract científico",
+      category: "hibrido",
+      type: "Resumen audiovisual de artículo",
+      audience: "Comunidad académica y público interesado",
+      objective: "Aumentar descubrimiento, comprensión rápida y difusión de resultados científicos.",
+      definition:
+        "Pieza breve (habitualmente 1-4 minutos) que resume pregunta, método, hallazgos e implicaciones de un artículo para acompañar su publicación.",
+      technical: [
+        "Guion muy sintetizado orientado a claridad y transferencia.",
+        "Edición ligera con gráficos/tablas clave del paper.",
+        "Subtítulos y/o transcripción para accesibilidad y consumo sin audio.",
+        "Entrega en formato .mp4 y adaptación para web/redes."
+      ],
+      production:
+        "Equipo mínimo: autor/a o portavoz + apoyo editorial/audiovisual para guion, grabación y edición.",
+      costLabel: "0.2-6k EUR por pieza",
+      timeLabel: "1-7 días",
+      interactivityLevel: 1,
+      scalabilityLevel: 4,
+      costIndex: 3,
+      timeIndex: 3,
+      pros: [
+        "Mejora la comprensión inicial de trabajos complejos.",
+        "Facilita difusión en redes académicas e institucionales.",
+        "Funciona como puente entre artículo técnico y audiencia ampliada."
+      ],
+      risks: [
+        "Riesgo de simplificación excesiva de resultados.",
+        "Variabilidad de criterios técnicos entre revistas/editoriales."
+      ],
+      metrics: [
+        "Visualizaciones, retención y clics al DOI/artículo completo.",
+        "Altmetric Attention Score y menciones sociales.",
+        "Descargas o lecturas del artículo tras publicación del video-abstract."
+      ],
+      examples: [
+        { name: "Wiley - Video Abstract Guidelines", url: "https://authors.wiley.com/author-resources/Journal-Authors/Promotion/author-provided-video-abstracts.html" },
+        { name: "The Plant Journal - Video Abstracts", url: "https://onlinelibrary.wiley.com/journal/1365313x/tpjvideoabstracts" },
+        { name: "PLOS ONE - eficacia de video abstracts", url: "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0224697" }
+      ],
+      references: [
+        "Video abstracts and plain language summaries are more effective than graphical abstracts and published abstracts (PLOS ONE, 2020).",
+        "Video Abstracts in Research (2024, revisión y recomendaciones prácticas).",
+        "Guías editoriales de video-abstract en Wiley y Taylor & Francis."
+      ]
     }
   ]
 };
