@@ -509,6 +509,29 @@ select {
   color: #3d3328;
 }
 
+.format-link-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.format-link-chip {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  border: 1px solid var(--line);
+  background: #fff;
+  border-radius: 999px;
+  padding: 5px 10px;
+  font-size: 0.82rem;
+  color: #095f5d;
+}
+
+.format-link-chip:hover {
+  border-color: var(--accent-2);
+  background: rgba(11, 122, 119, 0.08);
+}
+
 table {
   width: 100%;
   border-collapse: collapse;

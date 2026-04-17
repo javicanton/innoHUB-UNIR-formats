@@ -80,6 +80,7 @@ window.INNOHUB_DATA = {
       title: "Museo del Prado: estrategia short-form en TikTok",
       organization: "Museo Nacional del Prado",
       format: "Píldora vertical short-form + live cultural",
+      relatedFormats: ["short-vertical", "science-live"],
       challenge:
         "Acercar contenidos de arte e historia a audiencias jóvenes sin perder rigor curatorial.",
       approach:
@@ -107,6 +108,7 @@ window.INNOHUB_DATA = {
       title: "MIT Media Lab: ecosistema de vídeo para investigación",
       organization: "MIT Media Lab",
       format: "Microvídeo, piezas de investigación y storytelling audiovisual",
+      relatedFormats: ["short-vertical", "videopodcast"],
       challenge:
         "Comunicar investigación interdisciplinar compleja a audiencias no especialistas y partners globales.",
       approach:
@@ -126,6 +128,62 @@ window.INNOHUB_DATA = {
         {
           name: "MIT Media Lab - News + Updates",
           url: "https://www.media.mit.edu/"
+        }
+      ]
+    },
+    {
+      id: "nasa-twitch-live",
+      title: "NASA en Twitch: divulgación científica en directo",
+      organization: "NASA",
+      format: "Live streaming interactivo con chat",
+      relatedFormats: ["science-live"],
+      challenge:
+        "Conectar divulgación científica institucional con audiencias digitales en tiempo real.",
+      approach:
+        "Uso de directos en Twitch para eventos y sesiones de ciencia/espacio con participación de comunidad y formatos de conversación en vivo.",
+      outcome:
+        "Consolidación de un canal oficial en una plataforma nativa de interacción, complementando otras plataformas de vídeo para alcance y engagement.",
+      transferableLearnings: [
+        "El chat en tiempo real aumenta cercanía y preguntas de alto valor.",
+        "Los directos funcionan mejor cuando se coordinan con piezas resumen posteriores.",
+        "La estrategia multicanal permite combinar alcance masivo y conversación profunda."
+      ],
+      sources: [
+        {
+          name: "Canal oficial de NASA en Twitch",
+          url: "https://www.twitch.tv/nasa"
+        },
+        {
+          name: "Estudio sobre Twitch y comunicación científica (caso NASA)",
+          url: "https://firstmonday.org/ojs/index.php/fm/article/view/13214"
+        }
+      ]
+    },
+    {
+      id: "phet-simulations-stem",
+      title: "PhET (CU Boulder): simulaciones interactivas para STEM",
+      organization: "University of Colorado Boulder - PhET",
+      format: "Explorable simulations",
+      relatedFormats: ["explorable-sim", "interactive-video"],
+      challenge:
+        "Mejorar comprensión conceptual y participación activa en aprendizaje de ciencias y matemáticas.",
+      approach:
+        "Despliegue global de simulaciones manipulables con diseño basado en investigación educativa y uso en aula y autoaprendizaje.",
+      outcome:
+        "Adopción internacional y evidencia de mejoras en aprendizaje y actitudes hacia STEM en distintos contextos educativos.",
+      transferableLearnings: [
+        "La interacción con variables acelera comprensión de conceptos abstractos.",
+        "Las simulaciones son más efectivas cuando se integran en secuencias didácticas activas.",
+        "El acceso abierto facilita escalabilidad y reutilización en múltiples niveles."
+      ],
+      sources: [
+        {
+          name: "PhET Interactive Simulations",
+          url: "https://phet.colorado.edu/"
+        },
+        {
+          name: "PhET Impact Report 2024",
+          url: "https://phet.colorado.edu/publications/PhET_Impact_Report_2024.pdf"
         }
       ]
     }

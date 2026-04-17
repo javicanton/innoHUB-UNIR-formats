@@ -19,6 +19,8 @@
     ott: "OTT"
   };
 
+  const formatsById = Object.fromEntries(data.formats.map((item) => [item.id, item]));
+
   const elements = {
     projectTitle: document.getElementById("projectTitle"),
     projectSubtitle: document.getElementById("projectSubtitle"),
@@ -104,6 +106,26 @@
       return;
     }
 
+    function relatedFormatsMarkup(caseItem) {
+      const related = Array.isArray(caseItem.relatedFormats) ? caseItem.relatedFormats : [];
+      if (!related.length) return "";
+      const links = related
+        .map((formatId) => {
+          const linked = formatsById[formatId];
+          if (!linked) return "";
+          return `<a class="format-link-chip" href="format.html?id=${encodeURIComponent(linked.id)}">${escapeHtml(linked.name)}</a>`;
+        })
+        .filter(Boolean)
+        .join("");
+      if (!links) return "";
+      return `
+        <section class="detail-block">
+          <h4>Formatos relacionados</h4>
+          <div class="format-link-row">${links}</div>
+        </section>
+      `;
+    }
+
     elements.successCasesGrid.innerHTML = data.successCases
       .map(
         (item) => `
@@ -128,6 +150,7 @@
                 <h4>Lecciones transferibles</h4>
                 ${listMarkup(item.transferableLearnings || [])}
               </section>
+              ${relatedFormatsMarkup(item)}
               <section class="detail-block">
                 <h4>Fuentes</h4>
                 <ul>
