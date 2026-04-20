@@ -37,24 +37,50 @@
     return /instagram\.com|tiktok\.com|youtube\.com|youtu\.be/i.test(url);
   }
 
+  function normalizeInstagramUrl(url) {
+    const match = url.match(/https?:\/\/(?:www\.)?instagram\.com\/(?:reel|p)\/([^/?#]+)/i);
+    if (!match) return url;
+    return `https://www.instagram.com/reel/${match[1]}/`;
+  }
+
+  function normalizeYouTubeEmbedUrl(url) {
+    try {
+      if (/youtu\.be/i.test(url)) {
+        const videoId = url.split("/").pop()?.split(/[?#]/)[0];
+        return videoId ? `https://www.youtube.com/embed/${videoId}` : url;
+      }
+      if (/youtube\.com/i.test(url)) {
+        if (url.includes("/shorts/")) {
+          const shortId = url.split("/shorts/")[1]?.split(/[?#]/)[0];
+          return shortId ? `https://www.youtube.com/embed/${shortId}` : url;
+        }
+        if (url.includes("watch?v=")) {
+          const videoId = new URL(url).searchParams.get("v");
+          return videoId ? `https://www.youtube.com/embed/${videoId}` : url;
+        }
+      }
+    } catch (_error) {
+      return url;
+    }
+    return url;
+  }
+
+  function normalizeTikTokEmbedUrl(url) {
+    const match = url.match(/\/video\/(\d+)/);
+    return match ? `https://www.tiktok.com/embed/v2/${match[1]}` : url;
+  }
+
   function embedFromUrl(url, title) {
     if (/instagram\.com/i.test(url)) {
-      return `<blockquote class="instagram-media" data-instgrm-permalink="${escapeHtml(url)}" data-instgrm-version="14"></blockquote>`;
+      const permalink = normalizeInstagramUrl(url);
+      return `<blockquote class="instagram-media" data-instgrm-permalink="${escapeHtml(permalink)}" data-instgrm-version="14"></blockquote>`;
     }
     if (/tiktok\.com/i.test(url)) {
-      const match = url.match(/\/video\/(\d+)/);
-      const embedUrl = match ? `https://www.tiktok.com/embed/v2/${match[1]}` : url;
+      const embedUrl = normalizeTikTokEmbedUrl(url);
       return `<iframe src="${escapeHtml(embedUrl)}" title="${escapeHtml(title)}" loading="lazy" allowfullscreen></iframe>`;
     }
     if (/youtube\.com|youtu\.be/i.test(url)) {
-      let embedUrl = url;
-      if (/youtu\.be/i.test(url)) {
-        const shortId = url.split("/").pop();
-        embedUrl = `https://www.youtube.com/embed/${shortId}`;
-      } else if (url.includes("watch?v=")) {
-        const videoId = new URL(url).searchParams.get("v");
-        embedUrl = `https://www.youtube.com/embed/${videoId}`;
-      }
+      const embedUrl = normalizeYouTubeEmbedUrl(url);
       return `<iframe src="${escapeHtml(embedUrl)}" title="${escapeHtml(title)}" loading="lazy" allowfullscreen></iframe>`;
     }
     return "";
@@ -135,4 +161,11 @@
       </section>
     </div>
   `;
+
+  if (window.instgrm?.Embeds?.process) {
+    window.instgrm.Embeds.process();
+  }
+  if (window.tiktokEmbed?.lib?.render) {
+    window.tiktokEmbed.lib.render();
+  }
 })();
