@@ -188,6 +188,260 @@ window.INNOHUB_DATA = {
       ]
     }
   ],
+  services: [
+    {
+      id: "auditoria",
+      number: "01",
+      name: "Auditoría de Narrativa Científica",
+      subtitle: "Diagnóstico estratégico de comunicación audiovisual",
+      trl: "TRL 8–9",
+      tags: ["Consultoría", "Estrategia", "Captación"],
+      viability: "Muy alta",
+      description: "Servicio de diagnóstico y consultoría que evalúa la estrategia de comunicación audiovisual actual del cliente (universidad, centro de investigación, fundación o empresa EdTech) e identifica oportunidades de mejora y formatos innovadores aplicables a sus necesidades. El proceso incluye análisis del inventario de contenidos existentes, evaluación de la eficacia narrativa y el impacto en audiencias, benchmarking con referentes del sector y entrega de un informe detallado con recomendaciones estratégicas y un catálogo de formatos priorizados. Es la puerta de entrada ideal al servicio InnoHUB para clientes que aún no tienen clara su hoja de ruta de comunicación científica.",
+      includes: [
+        "Análisis del inventario de contenidos",
+        "Evaluación de eficacia narrativa",
+        "Benchmarking sectorial",
+        "Informe con recomendaciones y formatos priorizados"
+      ],
+      costEstimate: "300 – 800 €",
+      costDetail: "Horas de consultoría, análisis de contenidos y redacción del informe; sin costes de producción.",
+      clientPrice: "800 – 2.500 €",
+      clientPriceDetail: "",
+      priceNote: "Los precios son orientativos y se negociarán con cada cliente según alcance, complejidad y contexto de cada proyecto"
+    },
+    {
+      id: "manual",
+      number: "02",
+      name: "Manual de Formatos Audiovisuales a Medida",
+      subtitle: "Guía técnica para producción autónoma con calidad garantizada",
+      trl: "TRL 8–9",
+      tags: ["Manual", "Autonomía", "Metodología"],
+      viability: "Alta",
+      description: "Entrega de una guía técnica completa y personalizada para que el equipo de comunicación del cliente pueda producir de forma autónoma sus propios contenidos audiovisuales de divulgación científica con garantías de calidad y coherencia narrativa. El manual incluye definición del tono de voz y estilo visual, estructuras de guión adaptadas a los formatos seleccionados, pautas de accesibilidad, recomendaciones de herramientas y flujos de producción paso a paso. Es el producto ideal para instituciones que disponen de recursos humanos internos pero carecen del conocimiento metodológico para sistematizar su producción audiovisual.",
+      includes: [
+        "Tono de voz y estilo visual",
+        "Estructuras de guión por formato",
+        "Flujos de producción paso a paso",
+        "Pautas de accesibilidad"
+      ],
+      costEstimate: "400 – 900 €",
+      costDetail: "Redacción asistida por IA, maquetación y revisión especializada.",
+      clientPrice: "1.200 – 3.500 €",
+      clientPriceDetail: "",
+      priceNote: "Los precios son orientativos y se negociarán con cada cliente según alcance, complejidad y contexto de cada proyecto"
+    },
+    {
+      id: "taller",
+      number: "03",
+      name: "Taller de Ideación Co-creativa",
+      subtitle: "Design thinking aplicado a la divulgación científica",
+      trl: "TRL 8–9",
+      tags: ["Formación", "Co-creación", "Talleres"],
+      viability: "Alta",
+      description: "Sesión o programa de talleres presenciales o virtuales en los que el equipo InnoHUB trabaja junto al equipo del cliente para diseñar colaborativamente los formatos audiovisuales más adecuados a sus necesidades de comunicación científica. A través de metodologías de design thinking, creativity sprints y prototipado rápido en papel, los participantes definen la propuesta de valor de sus contenidos, identifican las audiencias prioritarias y llegan al final del taller con un brief ejecutivo listo para producción. El servicio incluye facilitación experta, materiales de trabajo, documentación del proceso y seguimiento posterior.",
+      includes: [
+        "Sesiones presenciales o virtuales",
+        "Design thinking y creativity sprints",
+        "Brief ejecutivo listo para producción",
+        "Facilitación experta + seguimiento"
+      ],
+      costEstimate: "600 – 1.500 € / sesión",
+      costDetail: "Facilitación, materiales y documentación; variable según duración y número de participantes.",
+      clientPrice: "900 – 3.000 € / sesión",
+      clientPriceDetail: "",
+      priceNote: "Los precios son orientativos y se negociarán con cada cliente según alcance, complejidad y contexto de cada proyecto"
+    },
+    {
+      id: "video-abstract",
+      number: "04",
+      name: "Video-Abstract Científico",
+      subtitle: "Tu investigación en 90 segundos, producida con IA",
+      trl: "TRL 8–9",
+      tags: ["Investigación", "Open Access", "Horizon"],
+      viability: "Muy alta",
+      description: "Pieza audiovisual breve (entre 90 segundos y 4 minutos) que sintetiza de forma visual y narrativa los hallazgos, metodología e impacto de un artículo o proyecto de investigación, con el objetivo de ampliar su visibilidad, facilitar su comprensión por audiencias no especializadas y aumentar su tasa de citación. El video-abstract combina locución guionizada, motion graphics, imágenes de recurso y, cuando procede, fragmentos de entrevista con los propios autores. El servicio incluye el guión de adaptación del texto científico, la producción de la pieza y la entrega en formatos optimizados para repositorios institucionales, plataformas académicas y redes sociales científicas. Se puede contratar como servicio unitario o en paquetes para grupos de investigación, revistas académicas o convocatorias de proyectos.",
+      includes: [
+        "Flujo 100% automatizado con IA",
+        "Guión, locución y motion graphics",
+        "Formatos para repositorios y RRSS",
+        "Paquetes de volumen disponibles"
+      ],
+      costEstimate: "10 – 25 € / pieza",
+      costDetail: "Proceso totalmente automatizado con IA: ingesta del texto científico, generación de guión, locución sintética, motion graphics parametrizados y exportación final sin intervención manual significativa.",
+      clientPrice: "60 – 100 € / pieza",
+      clientPriceDetail: "Paquetes de 10 unidades desde 55 € / pieza.",
+      priceNote: "Los precios son orientativos y se negociarán con cada cliente según alcance, complejidad y contexto de cada proyecto"
+    },
+    {
+      id: "podcast",
+      number: "05",
+      name: "Podcast Narrativo Científico",
+      subtitle: "Ciencia en audio inmersivo para audiencias digitales",
+      trl: "TRL 7–8",
+      tags: ["Audio", "Divulgación", "Series"],
+      viability: "Muy alta",
+      description: "Producción sonora serializada con tratamiento documental y narrativa envolvente orientada a hacer accesible el conocimiento académico y científico a audiencias no especializadas. A diferencia del podcast de entrevista convencional, el podcast narrativo combina locución guionizada, efectos sonoros, música original y fragmentos de fuentes primarias para construir una experiencia de escucha inmersiva. El servicio incluye diseño de línea editorial, desarrollo de la biblia de la serie, producción de episodios piloto y validación de la propuesta con paneles de audiencia antes del lanzamiento.",
+      includes: [
+        "Guión asistido por IA",
+        "Edición sonora y música original",
+        "Diseño de línea editorial completa",
+        "Distribución en plataformas líderes"
+      ],
+      costEstimate: "300 – 700 € / episodio",
+      costDetail: "Guión asistido por IA, edición sonora y música; grabación con locutores reales o síntesis de voz; variable según duración.",
+      clientPrice: "800 – 2.500 € / episodio",
+      clientPriceDetail: "Diseño de serie completa desde 5.000 €.",
+      priceNote: "Los precios son orientativos y se negociarán con cada cliente según alcance, complejidad y contexto de cada proyecto"
+    },
+    {
+      id: "video-ia",
+      number: "06",
+      name: "Vídeo Educativo Generado con IA",
+      subtitle: "Contenido escalable con calidad narrativa y coste mínimo",
+      trl: "TRL 6–7",
+      tags: ["IA Generativa", "EdTech", "Automatización"],
+      viability: "Muy alta",
+      description: "Producción de piezas audiovisuales cortas (entre 3 y 12 minutos) en las que la inteligencia artificial interviene en distintas fases del proceso creativo: generación de imágenes y animaciones, síntesis de voz naturalista, edición automatizada y personalización del contenido según el perfil del espectador. El resultado es un formato escalable que permite al cliente producir un volumen elevado de contenidos de divulgación manteniendo coherencia estética y calidad narrativa, con tiempos de producción y costes significativamente reducidos respecto a la producción audiovisual tradicional. El servicio incluye el diseño del flujo de producción asistida por IA, la selección y configuración de las herramientas más adecuadas y la validación ética y narrativa de los resultados.",
+      includes: [
+        "Generación de imágenes y animaciones",
+        "Síntesis de voz naturalista",
+        "Edición y montaje automatizados",
+        "Validación ética incluida"
+      ],
+      costEstimate: "150 – 500 € / pieza",
+      costDetail: "Generación de imágenes y animaciones, síntesis de voz, edición automatizada y revisión de calidad; escala linealmente en series.",
+      clientPrice: "500 – 2.000 € / pieza",
+      clientPriceDetail: "Tarifas de volumen para series de más de 10 piezas.",
+      priceNote: "Los precios son orientativos y se negociarán con cada cliente según alcance, complejidad y contexto de cada proyecto"
+    },
+    {
+      id: "visualizacion",
+      number: "07",
+      name: "Visualización Avanzada de Datos Científicos",
+      subtitle: "Datos complejos convertidos en relatos visuales de impacto",
+      trl: "TRL 7–8",
+      tags: ["Data", "Infografía", "Ciencia Abierta"],
+      viability: "Alta",
+      description: "Transformación de conjuntos de datos complejos (estadísticas, modelos climáticos, datos epidemiológicos, resultados de ensayos clínicos) en piezas audiovisuales de visualización dinámica que hacen comprensibles las tendencias, patrones y conclusiones científicas para audiencias no expertas. El servicio combina diseño de información, motion graphics y narración científica para convertir tablas y gráficos convencionales en relatos visuales impactantes y rigurosos. Especialmente indicado para la comunicación de resultados de investigación, memorias institucionales, informes de impacto y campañas de sensibilización basadas en evidencia.",
+      includes: [
+        "Diseño de información asistido por IA",
+        "Motion graphics sobre datos reales",
+        "Narración científica integrada",
+        "Indicado para memorias e informes de impacto"
+      ],
+      costEstimate: "500 – 1.500 € / pieza",
+      costDetail: "Tratamiento de datos, diseño de información asistido por IA, animación y narración; variable según volumen y complejidad del dataset.",
+      clientPrice: "1.500 – 5.000 € / pieza",
+      clientPriceDetail: "",
+      priceNote: "Los precios son orientativos y se negociarán con cada cliente según alcance, complejidad y contexto de cada proyecto"
+    },
+    {
+      id: "transmedia",
+      number: "08",
+      name: "Serie Transmedia de Divulgación",
+      subtitle: "Un mismo conocimiento, todas las plataformas",
+      trl: "TRL 6–7",
+      tags: ["Multiplataforma", "Comunidad", "EdTech"],
+      viability: "Alta",
+      description: "Formato narrativo distribuido simultáneamente en múltiples plataformas (televisión, redes sociales, podcast, web interactiva) con piezas complementarias que amplían el universo de conocimiento central. Cada plataforma aporta una capa diferente de profundidad: el vídeo ofrece la narrativa principal, el podcast profundiza en entrevistas, las redes sociales generan comunidad y la web interactiva proporciona datos y recursos descargables. Este modelo multiplica el alcance de la divulgación científica, adaptando el mensaje al contexto y hábito de consumo de cada audiencia sin perder coherencia editorial.",
+      includes: [
+        "Diseño de universo narrativo multiplataforma",
+        "Vídeo, podcast, RRSS y web interactiva",
+        "Coordinación editorial integrada",
+        "Piloto de validación disponible"
+      ],
+      costEstimate: "2.500 – 7.000 € / temporada",
+      costDetail: "Diseño editorial multiplataforma, producción de piezas por canal y coordinación; parte del contenido generado con IA.",
+      clientPrice: "6.000 – 18.000 € / temporada",
+      clientPriceDetail: "Piloto de validación desde 2.500 €.",
+      priceNote: "Los precios son orientativos y se negociarán con cada cliente según alcance, complejidad y contexto de cada proyecto"
+    },
+    {
+      id: "gamificado",
+      number: "09",
+      name: "Contenido Educativo Gamificado",
+      subtitle: "Mecánicas de juego al servicio de la divulgación",
+      trl: "TRL 5–6",
+      tags: ["Gamificación", "Jóvenes", "Museos"],
+      viability: "Alta",
+      description: "Diseño y producción de piezas audiovisuales y experiencias interactivas que aplican mecánicas de juego (puntos, niveles, retos, narrativa de progreso) para facilitar el aprendizaje y la divulgación científica. El servicio va desde la producción de vídeos con elementos gamificados integrados hasta el desarrollo de microjuegos web o aplicaciones móviles ligeras orientadas a la exploración de contenidos académicos. La gamificación aumenta significativamente la retención del conocimiento y el tiempo de interacción del usuario, convirtiéndose en una palanca estratégica para instituciones que buscan llegar a audiencias jóvenes con contenidos de ciencia, historia o tecnología.",
+      includes: [
+        "Diseño de mecánicas y niveles",
+        "Vídeos gamificados o microjuegos web",
+        "Alta retención de conocimiento",
+        "Modelos de licenciamiento disponibles"
+      ],
+      costEstimate: "3.000 – 10.000 €",
+      costDetail: "Diseño de mecánicas, desarrollo de interfaz interactiva o microjuego y producción audiovisual asociada; horquilla inferior para vídeos gamificados, superior para microjuegos web.",
+      clientPrice: "8.000 – 25.000 €",
+      clientPriceDetail: "Variable según si es vídeo gamificado, microjuego web o aplicación móvil.",
+      priceNote: "Los precios son orientativos y se negociarán con cada cliente según alcance, complejidad y contexto de cada proyecto"
+    },
+    {
+      id: "documental",
+      number: "10",
+      name: "Documental Interactivo",
+      subtitle: "El espectador decide cómo explorar el conocimiento",
+      trl: "TRL 6–7",
+      tags: ["Educación", "Cultura", "Museos"],
+      viability: "Alta",
+      description: "Producción audiovisual no lineal en la que el espectador puede tomar decisiones narrativas o explorar ramas temáticas alternativas. Combina vídeo de calidad profesional con interfaces digitales que permiten la navegación entre contenidos, aportando una experiencia inmersiva especialmente eficaz para explicar procesos científicos complejos, fenómenos sociales o trayectorias históricas. Cada pieza se desarrolla bajo metodología de design thinking, con diagnóstico previo de las necesidades del cliente, mapa de ramificaciones narrativas, prototipado de la interfaz y validación con audiencias reales antes de la producción definitiva.",
+      includes: [
+        "Narrativa no lineal con ramas temáticas",
+        "Interfaz de navegación interactiva",
+        "Validación con audiencias reales",
+        "Distribución en plataformas OTT"
+      ],
+      costEstimate: "4.000 – 12.000 €",
+      costDetail: "Producción de las ramas narrativas con apoyo de IA generativa, desarrollo de interfaz de navegación y pruebas de usuario.",
+      clientPrice: "10.000 – 28.000 €",
+      clientPriceDetail: "",
+      priceNote: "Los precios son orientativos y se negociarán con cada cliente según alcance, complejidad y contexto de cada proyecto"
+    },
+    {
+      id: "eventos",
+      number: "11",
+      name: "Producción Integral de Eventos Científicos en Directo",
+      subtitle: "Del evento al ecosistema audiovisual permanente",
+      trl: "TRL 7–8",
+      tags: ["Congresos", "Directo", "Institucional"],
+      viability: "Alta",
+      description: "Servicio de producción audiovisual completa para congresos, jornadas, seminarios y actos institucionales de carácter científico o académico, que abarca tanto la cobertura del evento en directo como la producción de los materiales audiovisuales previos y derivados que amplían su alcance e impacto. La propuesta se articula en tres fases: preproducción (entrevistas a ponentes, teasers, materiales de contexto), realización en directo (multicámara, streaming, grafismo, archivo) y posproducción (resúmenes, video-abstracts, repositorio completo). El resultado es un ecosistema audiovisual cohesionado que transforma un evento puntual en un activo de comunicación científica duradero y reutilizable.",
+      includes: [
+        "Preproducción: entrevistas, teasers, piezas previas",
+        "Realización en directo: multicámara y streaming",
+        "Posproducción: resúmenes, video-abstracts, repositorio",
+        "Servicio 360° con profundidad editorial científica"
+      ],
+      costEstimate: "5.000 – 14.000 €",
+      costDetail: "Preproducción de materiales previos, equipo técnico de realización en directo y posproducción del repositorio; variable según días de evento y volumen de contenidos derivados.",
+      clientPrice: "12.000 – 32.000 €",
+      clientPriceDetail: "En función del número de días, ponentes, idiomas y materiales derivados requeridos.",
+      priceNote: "Los precios son orientativos y se negociarán con cada cliente según alcance, complejidad y contexto de cada proyecto"
+    },
+    {
+      id: "xr",
+      number: "12",
+      name: "Experiencia Inmersiva en Realidad Extendida (XR)",
+      subtitle: "VR, AR y MR para visualizar lo que los formatos convencionales no pueden",
+      trl: "TRL 5–6",
+      tags: ["VR/AR", "Inmersivo", "I+D"],
+      viability: "Media-alta",
+      description: "Desarrollo de piezas audiovisuales en realidad virtual (VR), realidad aumentada (AR) o realidad mixta (MR) que sitúan al usuario en el interior del contenido científico o educativo. Esta modalidad permite visualizar fenómenos a escala microscópica o astronómica, recrear entornos históricos o simular procesos industriales y científicos con un nivel de comprensión imposible de alcanzar mediante formatos convencionales. El servicio comprende el diseño de la experiencia, el desarrollo del prototipo en plataformas como Unity o Unreal Engine, la validación pedagógica con usuarios y la entrega de la versión final adaptada a los dispositivos del cliente.",
+      includes: [
+        "Diseño de experiencia inmersiva",
+        "Desarrollo en Unity / Unreal Engine",
+        "Validación pedagógica con usuarios",
+        "Compatible con Meta Quest y Apple Vision Pro"
+      ],
+      costEstimate: "8.000 – 25.000 €",
+      costDetail: "Diseño de experiencia, modelado 3D o vídeo 360, desarrollo en Unity/Unreal y pruebas con usuarios; la IA reduce tiempos de modelado y texturizado pero el desarrollo sigue siendo intensivo.",
+      clientPrice: "18.000 – 55.000 €",
+      clientPriceDetail: "Variable según plataforma objetivo, nivel de interactividad y volumen de contenidos.",
+      priceNote: "Los precios son orientativos y se negociarán con cada cliente según alcance, complejidad y contexto de cada proyecto"
+    }
+  ],
   formats: [
     {
       id: "short-vertical",

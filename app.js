@@ -21,6 +21,121 @@
 
   const formatsById = Object.fromEntries(data.formats.map((item) => [item.id, item]));
 
+  const serviceElements = {
+    summaryPanel: document.getElementById("servicesSummary"),
+    cardsGrid: document.getElementById("servicesCardsGrid"),
+    detailPanel: document.getElementById("servicesDetailPanel"),
+    resultsInfo: document.getElementById("servicesResultsInfo")
+  };
+
+  const servicesState = {
+    selectedId: data.services[0] ? data.services[0].id : null
+  };
+
+  function renderServicesSummary() {
+    serviceElements.summaryPanel.innerHTML = `
+      <div class="services-summary-head">
+        <p class="services-summary-note">Dra. Inmaculada Berlanga · Dr. Javier Cantón — Universidad Internacional de La Rioja · UNIR TV</p>
+      </div>
+      <div class="services-summary-grid">
+        ${data.services.map((s) => `
+          <button class="service-summary-chip" data-service-id="${s.id}">
+            <span class="service-chip-num">${escapeHtml(s.number)}</span>
+            <span class="service-chip-name">${escapeHtml(s.name)}</span>
+            <span class="service-chip-price">${escapeHtml(s.clientPrice)}</span>
+          </button>
+        `).join("")}
+      </div>
+      <p class="services-summary-legal">El acceso al servicio se canaliza a través de la Oficina de Transferencia de Conocimiento (OTC) de UNIR. Los precios son orientativos y se negociarán con cada cliente según alcance, complejidad y contexto de cada proyecto.</p>
+    `;
+
+    serviceElements.summaryPanel.querySelectorAll(".service-summary-chip").forEach((chip) => {
+      chip.addEventListener("click", () => {
+        servicesState.selectedId = chip.dataset.serviceId;
+        renderServicesCards();
+        renderServicesDetail();
+        document.getElementById("servicesCardsGrid").scrollIntoView({ behavior: "smooth", block: "nearest" });
+      });
+    });
+  }
+
+  function renderServicesCards() {
+    serviceElements.resultsInfo.textContent = `${data.services.length} servicios disponibles.`;
+
+    serviceElements.cardsGrid.innerHTML = data.services
+      .map((s, index) => `
+        <article class="format-card service-card ${s.id === servicesState.selectedId ? "active" : ""}" data-service-id="${s.id}" style="animation-delay:${index * 35}ms">
+          <div class="service-card-header">
+            <span class="service-num-badge">${escapeHtml(s.number)}</span>
+            <span class="card-topline">${s.tags.map((t) => escapeHtml(t)).join(" · ")}</span>
+          </div>
+          <h3>${escapeHtml(s.name)}</h3>
+          <p class="card-desc">${escapeHtml(s.subtitle)}</p>
+          <div class="card-metrics">
+            <span class="pill pill-price">${escapeHtml(s.clientPrice)}</span>
+            <span class="pill">${escapeHtml(s.trl)}</span>
+            <span class="pill pill-viability">Viabilidad: ${escapeHtml(s.viability)}</span>
+          </div>
+        </article>
+      `)
+      .join("");
+
+    serviceElements.cardsGrid.querySelectorAll(".service-card").forEach((card) => {
+      card.addEventListener("click", () => {
+        servicesState.selectedId = card.dataset.serviceId;
+        renderServicesCards();
+        renderServicesDetail();
+      });
+    });
+  }
+
+  function renderServicesDetail() {
+    const selected = data.services.find((s) => s.id === servicesState.selectedId);
+    if (!selected) return;
+
+    serviceElements.detailPanel.innerHTML = `
+      <div class="detail-head">
+        <div>
+          <span class="service-detail-num">${escapeHtml(selected.number)}</span>
+          <h3 style="margin-top:6px">${escapeHtml(selected.name)}</h3>
+          <span class="detail-tag">${escapeHtml(selected.subtitle)}</span>
+        </div>
+      </div>
+
+      <div class="service-tags-row">
+        ${selected.tags.map((t) => `<span class="service-tag">${escapeHtml(t)}</span>`).join("")}
+        <span class="service-tag service-tag-trl">${escapeHtml(selected.trl)}</span>
+        <span class="service-tag service-tag-viability">Viabilidad: ${escapeHtml(selected.viability)}</span>
+      </div>
+
+      <p class="detail-definition">${escapeHtml(selected.description)}</p>
+
+      <div class="detail-grid">
+        <section class="detail-block">
+          <h4>Qué incluye</h4>
+          <ul>${selected.includes.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>
+        </section>
+
+        <section class="detail-block service-pricing-block">
+          <h4>Precios</h4>
+          <div class="service-price-row">
+            <div class="service-price-cell">
+              <p class="service-price-label">Coste estimado de producción</p>
+              <p class="service-price-value">${escapeHtml(selected.costEstimate)}</p>
+              <p class="service-price-detail">${escapeHtml(selected.costDetail)}</p>
+            </div>
+            <div class="service-price-cell service-price-cell--client">
+              <p class="service-price-label">Precio orientativo al cliente</p>
+              <p class="service-price-value">${escapeHtml(selected.clientPrice)}</p>
+              ${selected.clientPriceDetail ? `<p class="service-price-detail">${escapeHtml(selected.clientPriceDetail)}</p>` : ""}
+            </div>
+          </div>
+          <p class="service-price-note">${escapeHtml(selected.priceNote)}</p>
+        </section>
+      </div>
+    `;
+  }
+
   const elements = {
     projectTitle: document.getElementById("projectTitle"),
     projectSubtitle: document.getElementById("projectSubtitle"),
@@ -525,4 +640,7 @@
   updateKPIs();
   setupEvents();
   render();
+  renderServicesSummary();
+  renderServicesCards();
+  renderServicesDetail();
 })();
