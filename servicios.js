@@ -24,7 +24,7 @@
   function renderServicesSummary() {
     serviceElements.summaryPanel.innerHTML = `
       <div class="services-summary-head">
-        <p class="services-summary-note">Dra. Inmaculada Berlanga · Dr. Javier Cantón — Universidad Internacional de La Rioja · UNIR TV</p>
+        <p class="services-summary-note">Dra. Inmaculada Berlanga · Dr. Javier Cantón · Dra. Isabel de Azcárraga — Universidad Internacional de La Rioja · UNIR TV</p>
       </div>
       <div class="services-summary-grid">
         ${data.services.map((s) => `
