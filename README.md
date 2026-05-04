@@ -11,4 +11,4 @@ Incluye:
 - una página de detalle por formato con información completa y ejemplos;
 - una visualización comparativa y un gráfico de correlación entre variables clave.
 
-[Ver sitio en vivo →](https://javicanton.github.io/innoHUB-UNIR-formats/)
+[Ver sitio en vivo →](https://javicanton.github.io/divulgAV/)
