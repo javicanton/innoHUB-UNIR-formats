@@ -1,9 +1,9 @@
-window.INNOHUB_DATA = {
+window.DIVULGAV_DATA = {
   project: {
     title: "Biblia de formatos audiovisuales para innovación en divulgación científica",
-    subtitle: "Repositorio web operativo del proyecto innoHUB UNIR",
+    subtitle: "Repositorio web operativo del proyecto DivulgAV",
     summary:
-      "Esta versión digital traduce la investigación de innoHUB a un sistema acciónable para diseñar, prototipar y validar formatos de comunicación científica. Combina criterio académico y viabilidad de producción.",
+      "Esta versión digital traduce la investigación de DivulgAV a un sistema acciónable para diseñar, prototipar y validar formatos de comunicación científica. Combina criterio académico y viabilidad de producción.",
     goals: [
       "Sistematizar formatos con una ficha estándar: objetivo, técnica, coste-tiempo, riesgos y medición.",
       "Fácilitar decisiones editoriales según impacto buscado: conocimiento, confianza, habilidades o acción.",
@@ -11,7 +11,7 @@ window.INNOHUB_DATA = {
     ],
     scope: [
       "Ámbito: universidades, medios, instituciones culturales, EdTech y equipos de divulgación.",
-      "Fase: repositorio inicial basado en Proyecto innoHUB UNIR.docx + Biblia formatos audiovisuales.pdf."
+      "Fase: repositorio inicial basado en Proyecto DivulgAV.docx + Biblia formatos audiovisuales.pdf."
     ],
     status:
       "Versión 0.1 web. Contenido inicial normalizado desde la investigación. Requiere validación editorial continua."
@@ -197,7 +197,7 @@ window.INNOHUB_DATA = {
       trl: "TRL 8–9",
       tags: ["Consultoría", "Estrategia", "Captación"],
       viability: "Muy alta",
-      description: "Servicio de diagnóstico y consultoría que evalúa la estrategia de comunicación audiovisual actual del cliente (universidad, centro de investigación, fundación o empresa EdTech) e identifica oportunidades de mejora y formatos innovadores aplicables a sus necesidades. El proceso incluye análisis del inventario de contenidos existentes, evaluación de la eficacia narrativa y el impacto en audiencias, benchmarking con referentes del sector y entrega de un informe detallado con recomendaciones estratégicas y un catálogo de formatos priorizados. Es la puerta de entrada ideal al servicio InnoHUB para clientes que aún no tienen clara su hoja de ruta de comunicación científica.",
+      description: "Servicio de diagnóstico y consultoría que evalúa la estrategia de comunicación audiovisual actual del cliente (universidad, centro de investigación, fundación o empresa EdTech) e identifica oportunidades de mejora y formatos innovadores aplicables a sus necesidades. El proceso incluye análisis del inventario de contenidos existentes, evaluación de la eficacia narrativa y el impacto en audiencias, benchmarking con referentes del sector y entrega de un informe detallado con recomendaciones estratégicas y un catálogo de formatos priorizados. Es la puerta de entrada ideal al servicio DivulgAV para clientes que aún no tienen clara su hoja de ruta de comunicación científica.",
       includes: [
         "Análisis del inventario de contenidos",
         "Evaluación de eficacia narrativa",
@@ -239,7 +239,7 @@ window.INNOHUB_DATA = {
       trl: "TRL 8–9",
       tags: ["Formación", "Co-creación", "Talleres"],
       viability: "Alta",
-      description: "Sesión o programa de talleres presenciales o virtuales en los que el equipo InnoHUB trabaja junto al equipo del cliente para diseñar colaborativamente los formatos audiovisuales más adecuados a sus necesidades de comunicación científica. A través de metodologías de design thinking, creativity sprints y prototipado rápido en papel, los participantes definen la propuesta de valor de sus contenidos, identifican las audiencias prioritarias y llegan al final del taller con un brief ejecutivo listo para producción. El servicio incluye facilitación experta, materiales de trabajo, documentación del proceso y seguimiento posterior.",
+      description: "Sesión o programa de talleres presenciales o virtuales en los que el equipo DivulgAV trabaja junto al equipo del cliente para diseñar colaborativamente los formatos audiovisuales más adecuados a sus necesidades de comunicación científica. A través de metodologías de design thinking, creativity sprints y prototipado rápido en papel, los participantes definen la propuesta de valor de sus contenidos, identifican las audiencias prioritarias y llegan al final del taller con un brief ejecutivo listo para producción. El servicio incluye facilitación experta, materiales de trabajo, documentación del proceso y seguimiento posterior.",
       includes: [
         "Sesiones presenciales o virtuales",
         "Design thinking y creativity sprints",

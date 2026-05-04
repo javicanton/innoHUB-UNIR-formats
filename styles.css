@@ -79,6 +79,12 @@ body {
   background: linear-gradient(120deg, var(--accent), var(--accent-2));
 }
 
+.brand-logo {
+  height: 32px;
+  width: auto;
+  display: block;
+}
+
 .site-nav {
   display: inline-flex;
   gap: 14px;

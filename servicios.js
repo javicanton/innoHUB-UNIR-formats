@@ -1,5 +1,5 @@
 (function () {
-  const data = window.INNOHUB_DATA;
+  const data = window.DIVULGAV_DATA;
 
   /* ─── Utilities ─────────────────────────────────────────────── */
   function escapeHtml(text) {
@@ -393,7 +393,7 @@
           <span class="quiz-results-icon">👨‍🍳</span>
           <div>
             <h3 class="quiz-results-title">Las sugerencias del chef</h3>
-            <p class="quiz-results-subtitle">Basado en tus respuestas, estos son los servicios InnoHUB más adecuados para ti:</p>
+            <p class="quiz-results-subtitle">Basado en tus respuestas, estos son los servicios DivulgAV más adecuados para ti:</p>
           </div>
         </div>
 

@@ -1,6 +1,6 @@
-# innoHUB UNIR - Repositorio web de formatos audiovisuales
+# DivulgAV - Repositorio web de formatos audiovisuales
 
-Este repositorio contiene la versión web del marco de formatos audiovisuales de innoHUB UNIR para divulgación científica.
+Este repositorio contiene la versión web del marco de formatos audiovisuales de DivulgAV para divulgación científica.
 
 El objetivo es reunir, de forma visual y operativa, una base de formatos con criterios comparables (coste, tiempo, interactividad y escalabilidad), junto con fichas detalladas para apoyar decisiones editoriales y de producción.
 

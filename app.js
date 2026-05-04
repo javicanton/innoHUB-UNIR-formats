@@ -1,5 +1,5 @@
 (function () {
-  const data = window.INNOHUB_DATA;
+  const data = window.DIVULGAV_DATA;
 
   const state = {
     query: "",

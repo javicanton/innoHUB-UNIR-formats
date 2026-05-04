@@ -2,7 +2,7 @@
   const root = document.getElementById("formatDetailRoot");
   const params = new URLSearchParams(window.location.search);
   const id = params.get("id");
-  const data = window.INNOHUB_DATA;
+  const data = window.DIVULGAV_DATA;
 
   const categoryLabels = {
     social: "Social",
